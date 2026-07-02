@@ -105,6 +105,15 @@ if( \Bitrix\Main\Loader::includeModule('sotbit.schemaorg') && (strpos($APPLICATI
     "",
     array(
         "AREA_FILE_SHOW" => "file",
+        "PATH" => SITE_DIR."include/sotbit_origami/files/cookie-banner/cookie-banner.php"
+    )
+);?>
+
+<?$APPLICATION->IncludeComponent(
+    "bitrix:main.include",
+    "",
+    array(
+        "AREA_FILE_SHOW" => "file",
         "PATH" => SITE_DIR."include/sotbit_origami/files/metric.php"
     )
 );?>
