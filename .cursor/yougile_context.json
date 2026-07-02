@@ -1,0 +1,17 @@
+{
+  "active_chat_id": "8b4fa18f-6e29-4654-b9a7-b073599d1ae0",
+  "instructions": {
+    "8b4fa18f-6e29-4654-b9a7-b073599d1ae0": {
+      "task": "SUP-245",
+      "author": "Сергей Манушин",
+      "updated_at": "2026-07-02 12:31:31"
+    }
+  },
+  "chats": {
+    "8b4fa18f-6e29-4654-b9a7-b073599d1ae0": {
+      "task": "SUP-245",
+      "author": "Сергей Манушин",
+      "updated_at": "2026-07-02 12:31:31"
+    }
+  }
+}
