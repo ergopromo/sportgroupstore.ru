@@ -14,6 +14,7 @@
 }
 
 html[data-cookie-consent="accepted"] .cookie-banner,
+html[data-cookie-consent="rejected"] .cookie-banner,
 .cookie-banner--hidden {
     transform: translateY(100%);
     opacity: 0;
@@ -45,8 +46,13 @@ html[data-cookie-consent="accepted"] .cookie-banner,
     color: var(--main-color-hover);
 }
 
-.cookie-banner__btn {
+.cookie-banner__actions {
+    display: flex;
     flex-shrink: 0;
+    gap: 10px;
+}
+
+.cookie-banner__btn {
     min-width: 140px;
     height: 40px;
     line-height: 38px;
@@ -55,6 +61,18 @@ html[data-cookie-consent="accepted"] .cookie-banner,
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.cookie-banner__btn--reject {
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.cookie-banner__btn--reject:hover {
+    color: var(--main-color);
+    border-color: var(--main-color);
 }
 
 @media (max-width: 767.98px) {
@@ -66,6 +84,10 @@ html[data-cookie-consent="accepted"] .cookie-banner,
         flex-direction: column;
         align-items: stretch;
         gap: 14px;
+    }
+
+    .cookie-banner__actions {
+        flex-direction: column;
     }
 
     .cookie-banner__btn {

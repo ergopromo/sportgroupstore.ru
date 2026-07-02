@@ -9,8 +9,9 @@ Asset::getInstance()->addJs(SITE_DIR . "include/sotbit_origami/files/cookie-bann
 <script>
 (function () {
     try {
-        if (localStorage.getItem('sgs_cookie_consent') === 'accepted') {
-            document.documentElement.setAttribute('data-cookie-consent', 'accepted');
+        var consent = localStorage.getItem('sgs_cookie_consent');
+        if (consent === 'accepted' || consent === 'rejected') {
+            document.documentElement.setAttribute('data-cookie-consent', consent);
         }
     } catch (e) {}
 })();
@@ -23,8 +24,13 @@ Asset::getInstance()->addJs(SITE_DIR . "include/sotbit_origami/files/cookie-bann
             Продолжая пользоваться сайтом, вы соглашаетесь с их использованием.
             <a class="cookie-banner__link" href="<?= SITE_DIR ?>help/confidentiality/">Политика конфиденциальности</a>
         </p>
-        <button type="button" class="cookie-banner__btn btn btn-primary" id="cookie-banner-accept">
-            Принять
-        </button>
+        <div class="cookie-banner__actions">
+            <button type="button" class="cookie-banner__btn cookie-banner__btn--reject" id="cookie-banner-reject">
+                Отклонить
+            </button>
+            <button type="button" class="cookie-banner__btn btn btn-primary" id="cookie-banner-accept">
+                Принять
+            </button>
+        </div>
     </div>
 </div>
