@@ -1,24 +1,24 @@
-name Deploy Website to Stage
+name: Deploy Website to Stage
 
-on
-  push
-    branches
+on:
+  push:
+    branches:
       - master
 
-jobs
-  deploy
-    runs-on ubuntu-latest
-    steps
-      - name Checkout codebase
-        uses actionscheckout@v4
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v4
 
-      - name Deploy to Beget via SSH
-        uses appleboyssh-action@v1.0.3
-        with
-          host turbot.beget.ru
-          username novik5ga_github
-          key ${{ secrets.SSH_PRIVATE_KEY }}
-          script 
-            cd homennovik5gastage.sportgroupstore.rupublic_html
-            git config core.sshCommand ssh -i homennovik5gastage.sportgroupstore.rupublic_html.sshid_rsa_project -F devnull
+      - name: Deploy to Beget via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: turbot.beget.ru
+          username: novik5ga_github
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/n/novik5ga/stage.sportgroupstore.ru/public_html
+            git config core.sshCommand "ssh -i /home/n/novik5ga/stage.sportgroupstore.ru/public_html/.ssh/id_rsa_project -F /dev/null"
             git pull origin master
