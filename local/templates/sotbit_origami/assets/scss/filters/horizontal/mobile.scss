@@ -1,0 +1,85 @@
+.mobile_filter_form {
+
+    .catalog_content__filter_horizon_item {
+        margin: 0;
+        padding: 13px;
+        border-bottom: 1px solid #ededed;
+    }
+
+    .catalog_content__filter_horizon_item_name {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .find_property_all_check {
+        display: block;
+        margin: 0;
+        padding: 0 13px 10px;
+        color: var(--main-color);
+        cursor: pointer;
+        border: 0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .filter_horizontal-reset-all-filters {
+        display: none;
+    }
+
+    .filter_horizontal-in_stock_checkbox {
+        display: none;
+    }
+
+    .catalog_content__filter_horizon_item_wrapper {
+        position: fixed;
+        z-index: 1001;
+        left: 0;
+        top: 0;
+        display: none;
+        width: 90%;
+        height: calc(100% - 90px);
+        background: #ffffff;
+        border: 1px solid #ededed;
+        border-bottom: none;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        &::before {
+            content: none;
+        }
+    }
+}
+
+.bx_filter_mobile_button_box {
+    display: none;
+}
+
+.bx_filter_mobile_button_box_height {
+    display: none;
+  }
+  
+  @media (max-width: 991px) {
+    .bx_filter_mobile_button_box {
+      display: block;
+      position: fixed;
+      left: 0px;
+      bottom: 0px;
+      width: 90%;
+    }
+  
+    .bx_filter_mobile_button_box_height {
+      display: block;
+      height: 50px;
+    }
+  
+    .bx_filter_mobile_button_box .bx_filter_search_reset {
+      width: 100%;
+      height: 50px;
+      background: #fff;
+      border: 1px solid #ededed;
+      color: var(--main-color);
+      cursor: pointer;
+  
+    }
+  }
+  

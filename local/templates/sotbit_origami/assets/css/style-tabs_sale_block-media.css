@@ -1,0 +1,81 @@
+@media (max-width: 767.98px) {
+  .tabs_product_detail_card {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #ededed;
+  }
+  .tabs_product_detail_card .tabs_sale_block__label {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .tabs_product_detail_card .tabs_sale_block__label {
+    border: 1px solid #ced2d5;
+    margin-top: -1px;
+    position: relative;
+  }
+  .tabs_product_detail_card .tabs_sale_block__label:before {
+    position: absolute;
+    display: block;
+    content: "";
+    right: 1.5rem;
+    top: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-top: -5px;
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    background: #fff;
+    -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  .tabs_product_detail_card input[type=radio]:checked + label {
+    border: 1px solid #ced2d5;
+    position: relative;
+  }
+  .tabs_product_detail_card input[type=radio]:checked + label:before {
+    position: absolute;
+    display: block;
+    content: "";
+    right: 1.5rem;
+    top: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-top: 0px;
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  .tabs_product_detail_card .tabs_sale_block__content_service__content {
+    width: 100%;
+    padding: 1rem;
+  }
+  .tabs_product_detail_card .tabs_sale_block__content_service__photo {
+    width: 4rem;
+  }
+  .tabs_product_detail_card .tabs_sale_block__content_service__text {
+    width: calc(100% - 4rem);
+  }
+  .tabs_product_detail_card .tabs_sale_block__content {
+    padding: 1rem 0;
+  }
+  .tabs_product_detail_card .tabs_sale_block__content_existence {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .tabs_product_detail_card .rating-block {
+    width: 100%;
+  }
+
+  .tabs_product_detail_card.tabs_sale_block {
+    display: block;
+  }
+
+  .tabs_block__product_card {
+    border-bottom: 1px solid #ededed;
+  }
+}

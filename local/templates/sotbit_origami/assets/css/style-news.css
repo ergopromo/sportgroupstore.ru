@@ -1,0 +1,111 @@
+.news-block__wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 60px;
+}
+
+/* ___________ 1. block news __________________ */
+.news_block_two__link,
+.news_block_two__block_img_small_link {
+  display: block;
+  overflow: hidden;
+}
+
+.news_block_two__img,
+.news_block_two__block_img_small__img {
+  width: 100%;
+}
+
+.news_block_two__block_vertical {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  display: -webkit-flex;
+}
+
+/* ___________ end block news __________________ */
+/* ___________ 2. -variant- block news  __________________ */
+.news_block {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.news_block__content_img-block_link {
+  display: block;
+}
+.news_block__content_img-block_link img {
+  width: 100%;
+  padding-bottom: 0.7rem;
+}
+
+.news_block__content_date {
+  color: #807f7f;
+  padding-bottom: 0.5rem;
+}
+
+.news_block__content_name {
+  line-height: 1.4;
+}
+
+.news_block__content {
+  width: 20%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+.block_main_left_menu__content.active .news_block__content {
+  padding: 0 0.67rem;
+}
+
+/* ___________ end block news __________________ */
+/* ___________ 3. -variant- block news  __________________ */
+.news_block_three__img {
+  width: 100%;
+}
+
+.news_block_three__img_block_link {
+  display: block;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .news_block_three .slick-slide {
+    width: 380px;
+    margin-right: 10px;
+  }
+  .news_block_three .slick-slide .col-sm-6 {
+    max-width: none;
+  }
+}
+@media (max-width: 576px) {
+  .news_block_three .slick-slide {
+    width: 270px;
+    margin-right: 10px;
+  }
+}
+/* ___________ end block news __________________ */

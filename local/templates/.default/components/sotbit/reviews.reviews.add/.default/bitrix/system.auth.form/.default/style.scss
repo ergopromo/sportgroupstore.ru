@@ -1,0 +1,8 @@
+.review-auth__inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.review-auth__inputs-col {
+    flex-basis: calc(50% - 10px);
+}

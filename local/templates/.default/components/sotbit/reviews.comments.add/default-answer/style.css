@@ -1,0 +1,42 @@
+.reviews-container__footer-item .add-comments {
+  margin: 0;
+  padding: 0;
+}
+.reviews-container__footer-item .spoiler:hover {
+  color: var(--main-color);
+}
+.reviews-container__footer-item:hover {
+  color: var(--main-color);
+}
+
+.add-comments__send-answer-btns {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.add-comments__send-answer-btns .submit {
+  margin-right: 10px;
+}
+.add-comments__send-answer-btns .reset {
+  color: var(--main-color);
+  background: transparent;
+  border-color: var(--main-color);
+}
+.add-comments__send-answer-btns .reset:focus {
+  color: var(--main-color-hover);
+  background: transparent;
+}
+.add-comments__send-answer-btns .reset:hover {
+  color: var(--main-color-hover);
+  background: transparent;
+}
+
+.feed-add-post-text {
+  border: 1px solid #ededed;
+}
+
+.add-comments__success {
+  margin-top: 20px;
+  font-size: 1.5rem;
+}

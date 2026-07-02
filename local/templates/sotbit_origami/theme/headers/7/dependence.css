@@ -1,0 +1,15 @@
+.header-three ~ .footer-block .row {
+  margin: 0;
+}
+
+@media (max-width: 1023px) {
+  .header-three ~ .footer-block,
+.header-three ~ .site-builder__hide,
+.header-three ~ .blocks-wrapper {
+    padding-left: 0;
+  }
+
+  .feedback_block {
+    padding-left: 15px;
+  }
+}

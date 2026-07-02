@@ -1,0 +1,39 @@
+<? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+
+/**
+ * @var string $componentPath
+ * @var string $componentName
+ * @var array $arCurrentValues
+ * @var array $arTemplateParameters
+ */
+
+use Bitrix\Main\Loader;
+use Sotbit\Origami\Helper;
+
+if (!Loader::includeModule('iblock') || !Loader::includeModule('sotbit.origami')) {
+    return;
+}
+
+$arCrosselTemplates = ['template_1' => true, 'template_4' => true];
+$arVaraintListView = array_merge(array("ADMIN" => GetMessage('CP_BC_TPL_FROM_ADMIN')), Helper\Config::getVariantListView());
+$arVaraintListView = array_intersect_key($arVaraintListView, $arCrosselTemplates);
+
+$arTemplateParameters['VARIANT_LIST_VIEW'] = array(
+    'PARENT' => 'VISUAL',
+    'NAME' => GetMessage("SOTBIT_CROSSSELL_VARIANT_LIST_VIEW"),
+    'TYPE' => 'LIST',
+    'VALUES' => $arVaraintListView,
+    'DEFAULT' => 'template_4',
+    'ADDITIONAL_VALUES' => 'N'
+);
+
+$arActionProducts = array_merge(array("ADMIN" => GetMessage('CP_BC_TPL_FROM_ADMIN')), Helper\Config::getActionProducts());
+
+$arTemplateParameters['ACTION_PRODUCTS'] = array(
+    'PARENT' => 'ACTION_SETTINGS',
+    'NAME' => GetMessage('SOTBIT_CROSSSELL_ACTION_PRODUCTS'),
+    'TYPE' => 'LIST',
+    'MULTIPLE' => 'Y',
+    'DEFAULT' => 'ADMIN',
+    'VALUES' => $arActionProducts
+);

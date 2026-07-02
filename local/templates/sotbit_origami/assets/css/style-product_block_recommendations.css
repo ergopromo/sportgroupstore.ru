@@ -1,0 +1,119 @@
+.popular_category__wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* ___________ variant 1 popular_category_block __________________ */
+.popular_category_block_variant__tags_item {
+  display: inline-block;
+  color: #8b8b8b;
+  padding: 0 2rem 0 0;
+}
+
+.popular_category_block_variant__tags_item span {
+  color: #000000;
+}
+
+.popular_category_block_variant__canvas_title,
+.popular_category_block_variant__tags {
+  padding-bottom: 1rem;
+}
+
+.popular_category_block_variant__comment {
+  font-size: 0.93rem;
+}
+
+.popular_category_block_variant__canvas_img {
+  width: 100%;
+}
+
+/* ___________ variant 2 popular_category_block __________________ */
+.popular_category_block__canvas_img {
+  width: 100%;
+}
+
+.popular_category_block__canvas_link {
+  display: block;
+}
+
+.popular_category_block__canvas_block_img {
+  position: relative;
+}
+
+.popular_category_block__canvas_title {
+  position: absolute;
+  background: #ffffff;
+  padding: 0.3rem 1.5rem;
+  top: 0.8rem;
+}
+
+.popular_category_block_variant_canvas_link {
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* ___________ variant new popular_category_block __________________ */
+.popular_category_block_new_canvas_link {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 2.5rem 1.5rem;
+  min-height: 275px;
+  max-height: 275px;
+  border: 1px solid #ededed;
+  margin-bottom: 1rem;
+}
+
+.popular_category_new_two_img,
+.popular_category_block_new__canvas_img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 75%;
+  max-height: 75%;
+}
+
+/* ___________ variant new two popular_category_block __________________ */
+.popular_category_block_new {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.popular_category_block_new__canvas_title {
+  width: 100%;
+  text-align: center;
+}
+
+.popular_category_new_two_link {
+  width: 25%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  padding: 2.5rem 1.5rem;
+  min-height: 275px;
+  max-height: 275px;
+  border: 1px solid #ededed;
+}
+
+.popular_category_new_two_img {
+  margin-bottom: 25px;
+}

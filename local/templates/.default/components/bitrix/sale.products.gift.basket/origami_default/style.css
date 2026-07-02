@@ -1,0 +1,60 @@
+.sale-products-gift {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+.sale-products-gift .product_card__block_item {
+  width: 20%;
+}
+.sale-products-gift .product_card__inner {
+  width: auto;
+  -ms-flex-preferred-size: 270px;
+      flex-basis: 270px;
+}
+.sale-products-gift .puzzle_block__title {
+  width: 100%;
+}
+
+.sale-products-gift .product_card__block_item_inner {
+  width: 100%;
+}
+
+.sale-products-gift .product-card-inner__img-view {
+  display: none !important;
+}
+
+@media (max-width: 1200px) {
+  .sale-products-gift .product_card__block_item {
+    width: 25%;
+  }
+}
+@media (max-width: 1200px) {
+  .sale-products-gift .product_card__block_item {
+    width: 25%;
+  }
+}
+@media (max-width: 768px) {
+  .sale-products-gift {
+    margin-bottom: 30px;
+  }
+  .sale-products-gift .product_card__block_item {
+    width: 33.3333333333%;
+  }
+}
+@media (max-width: 620px) {
+  .sale-products-gift .product_card__block_item {
+    width: 50%;
+  }
+}
+@media (max-width: 460px) {
+  .sale-products-gift {
+    margin-bottom: 20px;
+  }
+  .sale-products-gift .product_card__block_item {
+    width: 100%;
+  }
+}

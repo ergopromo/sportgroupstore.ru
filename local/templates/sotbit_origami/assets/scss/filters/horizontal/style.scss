@@ -1,0 +1,388 @@
+.filter-horizontal {
+
+    .number_selected_items {
+        display: inline-block;
+        padding-right: 20px;
+    }
+
+    .catalog_content__filter_horizon_item_inner {
+        width: 100%;
+        margin: 1rem 0 0 !important;
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+        border: 0;
+        border-top: 1px solid #EDEDED;
+        overflow: hidden;
+    }
+
+    .bx_filter .bx_filter_search_reset {
+        display: none;
+    }
+
+    .bx_filter .bx_filter_search_button {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .blank_ul_wrapper {
+        padding: 20px 0;
+        margin-top: 16px;
+    }
+
+    .radio_container_wrapper {
+        margin: 0;
+        padding: 20px 0;
+        border-bottom: 1px solid #EDEDED;
+        border-top: 1px solid #EDEDED;
+
+        &.blank_ul_wrapper {
+            margin-top: 0;
+        }
+    }
+
+    .bx-filter-select-container {
+        margin: 0;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #EDEDED;
+    }
+
+    .find_property_value_wrapper {
+        display: block;
+    }
+
+    .find_property_all_check {
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        margin: 0;
+        color: var(--main-color);
+        border: 0;
+
+        &:hover {
+            border: none;
+            color: var(--main-color-hover);
+        }
+
+        &:hover {
+            color: var(--main-color);
+            border-bottom: 1px dotted var(--main-color);
+        }
+    }
+
+    .blank_ul_wrapper > ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    .blank_ul_wrapper {
+        padding: 1rem 0;
+        margin: 1rem 0 1.5rem 0;
+        border-bottom: 1px solid #ededed;
+        border-top: 1px solid #ededed;
+    }
+
+    .button_filter_block {
+        cursor: pointer;
+        outline: none;
+        line-height: 39px;
+        display: inline-block;
+        height: 40px;
+        padding: 0 0.5rem;
+        text-decoration: none;
+        color: #ffffff;
+        border: 1px solid var(--main-color);
+        background: var(--main-color);
+    }
+
+    .catalog_content__filter_horizon_item_name {
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 10px;
+        border: 1px solid #EDEDED;
+
+        &:hover {
+            color: var(--main-color);
+            border-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        [class^="icon-"],
+        [class*=" icon-"] {
+            font-size: 7px;
+        }
+    }
+
+    .bx_filter__title {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .icon-nav_button.icon-nav_button--custom {
+        display: inline-block;
+
+        &::before {
+            content: "";
+            position: relative;
+            left: -3px;
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            margin-top: 0;
+            font-size: 7px;
+            color: #000;
+            border-bottom: 1px solid #000;
+            border-right: 1px solid #000;
+            transform: rotate(45deg) translateY(-2px);
+        }
+    }
+
+    .icon-nav_button-rotate::before {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        margin-top: 0;
+        font-size: 7px;
+        color: var(--main-color);
+        border-bottom: 1px solid var(--main-color);
+        border-right: 1px solid var(--main-color);
+        transform: rotate(225deg) translateY(-2px);
+    }
+
+    .catalog_content__filter_horizon_item {
+        position: relative;
+        display: inline-block;
+        height: 30px;
+        margin: 0 10px 10px 0;
+        cursor: pointer;
+        transition: border 0.2s ease-in-out;
+
+        &.active .catalog_content__filter_horizon_item_name:hover {
+            color: var(--main-color);
+        }
+
+        &.active .catalog_content__filter_horizon_item_name {
+            border: 1px solid var(--main-color);
+            color: var(--main-color);
+            box-shadow: none;
+        }
+
+        &.filter_used {
+            &:hover {
+                box-shadow: none;
+            }
+
+            .catalog_content__filter_horizon_item_name {
+                border: 1px solid var(--main-color);
+                color: var(--main-color);
+
+                &:hover {
+                    color: var(--main-color);
+                    box-shadow: none;
+                }
+            }
+
+        }
+
+    }
+
+    .catalog_content__filter_horizon_item_wrapper {
+        position: absolute;
+        left: 0;
+        z-index: 102;
+        display: none;
+        width: 260px;
+        color: #000000;
+        background: none;
+
+        &.wrapper_right {
+            left: auto;
+            right: 0;
+
+            &::before {
+                left: initial;
+                right: 1.5rem;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            bottom: 100%;
+            left: 1.5rem;
+            width: 1rem;
+            height: 1rem;
+            margin-bottom: -1.5rem;
+            border-top: 1px solid #ededed;
+            border-left: 1px solid #ededed;
+            background: #fff;
+            transform: rotate(45deg);
+        }
+    }
+
+    .bx_filter_popup_result {
+
+        .popup_result_btns {
+            a.del_filter,
+            input {
+                display: none;
+            }
+        }
+
+        &.right {
+            left: 0;
+            top: calc(100% + 11px);
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                top: -4px;
+                left: 20%;
+                transform: skew(0) rotate(45deg);
+                background-color: var(--main-color);
+                z-index: 900;
+            }
+        }
+    }
+
+    .popup_result_info {
+        position: relative;
+        z-index: 940;
+    }
+
+
+    .bx_ui_slider_part {
+        &.p1 span {
+            text-align: left;
+        }
+
+        &.p5 span {
+            text-align: right;
+        }
+
+        &.p1 {
+            left: 38px;
+        }
+
+        &.p5 {
+            right: 35px;
+        }
+    }
+
+    .bx_filter_input_container input {
+        margin: 0;
+    }
+
+    .bx_ui_slider_handle {
+        &.left {
+            margin-left: -13px;
+        }
+
+        &.right {
+            margin-right: -15px;
+        }
+
+    }
+
+    .bx_filter_parameters_box_container_block_wrapper .popup-window-hr {
+        display: block;
+    }
+
+    .bx_ui_slider_pricebar_VN {
+        left: -11px !important;
+        right: -14px !important;
+    }
+
+    .filter-slide_tracks-wrapper {
+        border-bottom: 1px solid #EDEDED;
+    }
+
+    .checkbox__label {
+        &::before {
+            margin: 3px 3px 3px 0;
+        }
+
+        &:hover::before {
+            border: 1px solid var(--main-color);
+        }
+
+    }
+
+    .checkboxes_with_pictures-wrapper {
+        padding: 20px 0;
+        border-bottom: 1px solid #EDEDED;
+        border-top: 1px solid #EDEDED;
+    }
+
+    .col-xs-12 {
+        margin: 1rem 0 1.5rem 0;
+        padding: 20px 0;
+        border-bottom: 1px solid #ededed;
+        border-top: 1px solid #ededed;
+    }
+
+    .horizontal_filter-icon_cancel {
+        position: absolute;
+        top: 11px;
+        right: 10px;
+        display: none;
+        width: 8px;
+        height: 8px;
+        fill: var(--main-color);
+        stroke: var(--main-color);
+    }
+
+    .filter_horizontal-in_stock_checkbox {
+        display: none; /* wait backend realisation*/
+        line-height: 19px;
+        vertical-align: middle;
+        margin-right: 15px;
+        transition: all 0.2s ease-in-out;
+
+        .checkbox__label {
+            margin: 0;
+            font-size: 14px;
+        }
+
+    }
+
+    .filter_horizontal-reset-all-filters {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        color: #808080;
+        transition: all 0.2s ease-in-out;
+        visibility: hidden;
+        margin-right: 20px;
+
+        .horizontal_filter-icon_cancel {
+            position: relative;
+            top: -1px;
+            left: 0;
+            fill: #808080;
+            stroke: #808080;
+            transition: all 0.2s ease-in-out;
+        }
+
+        &:hover {
+            color: var(--main-color);
+
+            .horizontal_filter-icon_cancel {
+                fill: var(--main-color);
+                stroke: var(--main-color);
+            }
+        }
+    }
+}
+
+@import "mobile.scss";

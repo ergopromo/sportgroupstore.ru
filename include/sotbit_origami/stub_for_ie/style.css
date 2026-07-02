@@ -1,0 +1,115 @@
+.popup-window-content {
+    max-width: 550px;
+    padding: 37px;
+}
+.stub__title {
+    margin-bottom: 30px;
+    padding-bottom: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.stub__message {
+    margin-bottom: 30px;
+    padding-bottom: 0;
+    text-align: center;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.stub__list-browser {
+    width: 100%;
+    margin-top: 55px;
+}
+
+.stub__to_b2b-wrapper {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.stub__to_b2b {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 30px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    color: #fff;
+    background-color: #999999;
+}
+
+.stub__to_b2b:hover {
+    color: #fff;
+    background-color: #808080;
+}
+
+.stub__list-browser a {
+    max-width: 70px;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.stub__browser-chrome {
+    background: url("/include/sotbit_origami/stub_for_ie/img/chrome.png") no-repeat center 0;
+    padding-right: 20px;
+}
+
+.stub__browser-opera {
+    background: url("/include/sotbit_origami/stub_for_ie/img/opera.png") no-repeat center 0;
+    padding-right: 20px;
+}
+
+.stub__browser-firefox {
+    background: url("/include/sotbit_origami/stub_for_ie/img/firefox.png") no-repeat center 0;
+    padding-right: 20px;
+}
+
+.stub__browser-edge {
+    background: url("/include/sotbit_origami/stub_for_ie/img/edge.png") no-repeat center 0;
+}
+
+#stub_popup_content{
+    width: 550px;
+    height: 303px;
+    position: absolute;
+    z-index: 10000;
+    background: white;
+    padding: 37px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+#stub_popup_content_overlay{
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    position:fixed;
+    z-index: 9999;
+}
+
+.popup-window-close-icon-pos{
+    top: 20px;
+    right: 20px;
+    background-image: url("/local/templates/sotbit_origami/assets/img/icon_close.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.2s ease-in-out;
+    z-index: 10001;
+    width: 20px;
+    height: 20px;
+}
+
+.popup-window-close-icon-pos:hover{
+
+}

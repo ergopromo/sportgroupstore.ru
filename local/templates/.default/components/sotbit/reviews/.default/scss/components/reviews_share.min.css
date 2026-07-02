@@ -1,0 +1,1 @@
+body:before{white-space:pre;font-family:monospace;content:"Error: Undefined variable: \"$text_align_main\".\A         on line 60 of reviews_share.scss\A \A 55:   }\A 56:   .title {\A 57:     font-size: 18px;\A 58:   }\A 59:   .text {\A 60:     font-size: $text_align_main;\A 61:   }\A 62: }\A 63: \A 64: @media (max-width: 768px) {\A 65:   #sotbit_reviews_share {"}

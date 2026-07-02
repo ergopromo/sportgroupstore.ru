@@ -1,0 +1,19 @@
+.recommended-poducts__slider.owl-carousel {
+    width: calc(100% + 20px);
+    margin-left: -10px; }
+
+.recommended-poducts__slider .product-card-inner {
+    width: 100%; }
+
+.recommended-poducts__slider .owl-stage {
+    display: flex;
+    padding-bottom: 10px; }
+
+.recommended-poducts__slider.owl-carousel .owl-nav .owl-prev {
+    left: 10px; }
+
+.recommended-poducts__slider.owl-carousel .owl-nav .owl-next {
+    right: 10px; }
+
+.recommended-poducts__slider .owl-item {
+    position: relative; }

@@ -1,0 +1,411 @@
+.questions-list__item:not(:first-child) {
+    margin-top: 40px;
+}
+
+.shopanswer {
+    margin-top: 40px;
+    padding-left: 30px;
+    border-left: 4px solid #EDEDED;
+}
+
+.questions-list {
+    margin-bottom: 40px;
+}
+
+.reviews-container__avatar-container {
+    position: relative;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    margin-right: 15px;
+}
+
+.reviews-container__iframe-container {
+    display: inline-block;
+    width: 100%;
+    max-width: 600px;
+}
+
+.reviews-container__iframe {
+    position: relative;
+    width: 100%;
+    padding-bottom: 50%;
+}
+.reviews-container__iframe > iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.reviews-container__avatar-overflow-wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #F2F2F2;
+    overflow: hidden;
+}
+.reviews-container__avatar-overflow-wrapper img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.reviews-container__avatar-no-image {
+    fill: none;
+    stroke: #000000;
+}
+
+.reviews-container__ban-user {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.reviews-container__ban-user-icon {
+    fill: #BDBDBD;
+}
+
+.reviews-container__user-name {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.reviews-container__rating-stars {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin-right: 10px;
+}
+
+.reviews-container__date {
+    display: inline-block;
+    color: #808080;
+}
+
+.reviews-container__rating-stars-icon.reviews-container__rating-stars-icon_full {
+    fill: #FFB800;
+}
+.reviews-container__rating-stars-icon.reviews-container__rating-stars-icon_empty {
+    fill: #DADADA;
+}
+
+.ban-menu .message {
+    display: none;
+}
+
+.reviews-container__user-info-container {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.reviews-container__header {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    clear: both;
+    margin-bottom: 20px;
+}
+
+.reviews-container__footer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 25px;
+}
+
+.reviews-container__item:not(:first-child) {
+    padding: 20px 0;
+}
+
+.review-likes {
+    white-space: nowrap;
+}
+
+.review-likes__like {
+    fill: none;
+    stroke: #DADADA;
+    margin: 0 5px;
+}
+.review-likes__like.review-likes__like_dislike {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.reviews-container__likes-number {
+    margin: 0 5px;
+}
+
+.review-likes__vote {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+.review-likes__vote .review-likes__like {
+    fill: var(--main-color);
+    stroke: var(--main-color);
+}
+.review-likes__vote.review-likes__vote_send-yes .review-likes__like, .review-likes__vote.review-likes__vote_send-no .review-likes__like {
+    fill: none;
+    stroke: var(--main-color);
+}
+
+.reviews-container__footer-item {
+    padding-right: 10px;
+    cursor: pointer;
+}
+.reviews-container__footer-item:not(:first-child) {
+    border-left: 1px solid #C4C4C4;
+    padding: 0 10px;
+}
+.reviews-container__footer-item .spoiler:hover {
+    color: var(--main-color);
+}
+.reviews-container__footer-item:hover {
+    color: var(--main-color);
+}
+
+.reviews-container__footer-item_quote {
+    padding-right: 10px;
+}
+
+.revirew-body blockquote {
+    margin: 20px 0;
+    padding: 20px 30px;
+    background-color: #F7F7F7;
+    border: 1px dashed #BDBDBD;
+}
+.revirew-body blockquote::before {
+    display: none;
+}
+
+.revirew-body__title {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.reviews-container__answer {
+    padding-left: 40px;
+    margin-top: 40px;
+    border-left: 4px solid #EDEDED;
+}
+
+.revirew-body__images-wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.revirew-body__image-link {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+}
+
+.revirew-body__image {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+.filter-pagination {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.filter-pagination .right-arrows,
+.filter-pagination .left-arrows {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.filter-pagination .first,
+.filter-pagination .next,
+.filter-pagination .prev,
+.filter-pagination .last {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 100%;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+.filter-pagination .first {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 27px;
+}
+.filter-pagination .first::before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-bottom: 1px solid var(--main-color);
+    border-left: 1px solid var(--main-color);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.filter-pagination .first::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-bottom: 1px solid var(--main-color);
+    border-left: 1px solid var(--main-color);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.filter-pagination .prev::before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-bottom: 1px solid var(--main-color);
+    border-left: 1px solid var(--main-color);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.filter-pagination .next::before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-bottom: 1px solid var(--main-color);
+    border-left: 1px solid var(--main-color);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.filter-pagination .last {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 27px;
+}
+.filter-pagination .last::before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-bottom: 1px solid var(--main-color);
+    border-left: 1px solid var(--main-color);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.filter-pagination .last::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-bottom: 1px solid var(--main-color);
+    border-left: 1px solid var(--main-color);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.filter-pagination__page-button {
+    margin: 0 10px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.filter-pagination__page-button[data-active] {
+    border: 1px solid var(--main-color);
+}
+
+@media (max-width: 768px) {
+    .reviews-container {
+        padding: 20px;
+    }
+}
+@media (max-width: 450px) {
+    .reviews-container {
+        padding: 10px;
+    }
+}

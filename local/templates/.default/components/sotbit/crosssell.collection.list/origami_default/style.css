@@ -1,0 +1,26 @@
+.youtube_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+.youtube_title > a {
+    font-size: 14px;
+}
+.youtube_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+.youtube_item {
+    max-width: 20%;
+}
+.youtube_item iframe {
+    max-width: 100%;
+}
+.crosssell_collection_list-top-desc{
+    margin-bottom: 15px;
+}
+.crosssell_collection_list-bottom-desc{
+    margin-bottom: 15px;
+}

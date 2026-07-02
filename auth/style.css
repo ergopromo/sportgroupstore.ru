@@ -1,0 +1,7 @@
+.header-three__personal-photo.header-three__personal-photo_custom-icon {
+    background-image: url('/local/templates/sotbit_origami/assets/img/icon_login.svg');
+}
+
+#modal_auth {
+    min-width: 420px;
+}

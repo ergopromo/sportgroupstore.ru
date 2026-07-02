@@ -1,0 +1,61 @@
+Options -Indexes
+
+ErrorDocument 404 /404.php
+
+# --- 0) Базовая инициализация ---
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # --- 1) Проброс Authorization для всех окружений ---
+    # Получение Authorization из заголовков HTTP (FPM/CGI)
+    RewriteCond %{HTTP:Authorization} .+
+    RewriteRule ^ - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Получение Authorization из REDIRECT_HTTP_AUTHORIZATION (за прокси / mod_security)
+    RewriteCond %{HTTP:Authorization} =""
+    RewriteCond %{REDIRECT_HTTP_AUTHORIZATION} .+
+    RewriteRule ^ - [E=HTTP_AUTHORIZATION:%{REDIRECT_HTTP_AUTHORIZATION}]
+
+    # Дублирование через SetEnvIf для окружений, где переменная окружения читается PHP напрямую
+    # SI: Сохранять обе техники проброса; удаление любой из них запрещено, т.к. окружение сервера может отличаться.
+</IfModule>
+
+# Резервный проброс для конфигураций без mod_rewrite (например, старые CGI)
+SetEnvIfNoCase Authorization "^(.*)$" HTTP_AUTHORIZATION=$1
+
+# --- 2) Исключение обменника 1С из любых перенаправлений/ЧПУ ---
+<IfModule mod_rewrite.c>
+    # Явное исключение обработчика обмена 1С до любых других правил
+    RewriteCond %{REQUEST_URI} ^/bitrix/admin/1c_exchange\.php$ [NC]
+    RewriteRule ^ - [E=NO_SEF:1,E=SKIP_CACHE:1,L]
+
+    # SI: 1c_exchange.php всегда обрабатывается напрямую ядром Bitrix; любые редиректы и ЧПУ к нему не применяются.
+</IfModule>
+
+# --- 3) Базовые правила ЧПУ Bitrix ---
+<IfModule mod_rewrite.c>
+    # Пропуск существующих файлов/каталогов и самого маршрутизатора Bitrix
+    RewriteCond %{ENV:NO_SEF} !^1$
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-l
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !^/bitrix/urlrewrite\.php$ [NC]
+    RewriteRule ^ /bitrix/urlrewrite.php [L]
+</IfModule>
+
+# --- 4) Индексные файлы ---
+<IfModule mod_dir.c>
+    DirectoryIndex index.php index.html
+</IfModule>
+
+# --- 5) Кеширование изображений ---
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 3 days"
+    ExpiresByType image/gif  "access plus 3 days"
+    ExpiresByType image/png  "access plus 3 days"
+    ExpiresByType image/webp "access plus 3 days"
+</IfModule>
+
+# --- 6) Защита от многократной обработки (idempotency) ---
+# SI: Правила проброса Authorization и исключение 1c_exchange.php должны находиться выше любых редиректов/HTTPS/www и иных правил.

@@ -1,0 +1,123 @@
+#reviews-sharelink-popup {
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    position: fixed; /* чтoбы oкнo былo в видимoй зoне в любoм месте */
+    display: none; /* в oбычнoм сoстoянии oкнa не дoлжнo быть */
+    opacity: 0; /* пoлнoстью прoзрaчнo для aнимирoвaния */
+    z-index: 10000; /* oкнo дoлжнo быть нaибoлее бoльшем слoе */
+    border-radius: 2px;
+    border: 1px solid #ebebeb;
+}
+
+.reviews-sharelink-text {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #EDEDED
+}
+
+#reviews-sharelink-overlay {
+    z-index: 9999; /* пoдлoжкa дoлжнa быть выше слoев элементoв сaйтa, нo ниже слoя мoдaльнoгo oкнa */
+    position: fixed; /* всегдa перекрывaет весь сaйт */
+    background-color: #000;
+    opacity: 0.8; /* нo немнoгo прoзрaчнa */
+    filter: alpha(opacity=80);
+    width: 100%;
+    height: 100%; /* рaзмерoм вo весь экрaн */
+    top: 0; /* сверху и слевa 0, oбязaтельные свoйствa! */
+    left: 0;
+    cursor: pointer;
+    display: none; /* в oбычнoм сoстoянии её нет) */
+}
+
+#sotbit_reviews_share .share-link-title {
+    display: none;
+}
+
+#reviews-sharelink-popup #modal_close {
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    cursor: pointer;
+    display: block;
+    color: #888888;
+    font-size: 20px;
+}
+
+#reviews-sharelink-popup .modal-title {
+    display: block;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+#reviews-sharelink-popup .text {
+    font-size: 14px;
+}
+
+.reviews-sharelink-input-container {
+    display: flex;
+    padding: 30px;
+}
+
+.reviews-sharelink-popup #modal_close {
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+
+.icon_copy_link {
+    fill: #ffffff;
+}
+
+.copy-in-buffer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    border: 0;
+    background-color: var(--main-color);
+    cursor: pointer;
+}
+
+.copy-in-buffer:hover {
+    background-color: var(--main-color-hover);
+}
+
+.reviews-sharelink-popup #modal_close::before,
+.reviews-sharelink-popup #modal_close::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 13px;
+    width: 20px;
+    height: 1px;
+    background-color: #BDBDBD;
+}
+
+.reviews-sharelink-popup #modal_close::before {
+    transform: rotate(45deg);
+}
+
+.reviews-sharelink-popup #modal_close::after {
+    transform: rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    #sotbit_reviews_share {
+        float: none;
+    }
+
+    #reviews-sharelink-popup .modal-title {
+        font-size: 14px;
+    }
+
+    #reviews-sharelink-popup .text {
+        font-size: 10px;
+    }
+}

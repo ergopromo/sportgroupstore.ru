@@ -1,0 +1,159 @@
+.comments-container {
+  margin-bottom: 30px;
+}
+.comments-container .child-comment {
+  border-left: 4px solid #EDEDED;
+}
+.comments-container .item .border-bottom {
+  border-bottom: 1px dashed #e2e5e9;
+  padding-top: 5px;
+}
+.comments-container .item .avatar {
+  float: left;
+  width: 94px;
+  height: 94px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  margin-right: 25px;
+  background: #FFF;
+}
+.comments-container .item .user-info, .comments-container .item .comments {
+  display: table-cell;
+}
+.comments-container .item .user-info {
+  width: 40%;
+}
+.comments-container .item .avatar-inner {
+  margin: auto;
+  background: #FFF;
+}
+.comments-container .item .username, .comments-container .item .reply-header {
+  font-family: "ProximaNova", Arial, sans-serif;
+  color: #303030;
+  font-size: 14px;
+}
+.comments-container .item .age, .comments-container .item .country {
+  font-family: "ProximaNova", Arial, sans-serif;
+  color: #303030;
+  font-size: 14px;
+}
+.comments-container .item .age span, .comments-container .item .country span {
+  color: #6c727d;
+  font-size: 14px;
+  padding-right: 10px;
+  font-family: "ProximaNovaLight", Arial, sans-serif;
+  width: 75px;
+  display: inline-block;
+}
+.comments-container .item img {
+  display: inline;
+}
+.comments-container .item .time {
+  font-family: "ProximaNovaLight", Arial, sans-serif;
+  color: #6c727d;
+  font-size: 12px;
+}
+.comments-container .item .text {
+  font-family: "ProximaNovaLight", Arial, sans-serif;
+  color: #303030;
+  font-size: 14px;
+  vertical-align: top;
+}
+.comments-container .item .username {
+  margin-bottom: 13px;
+  display: inline-block;
+  border-bottom: 1px solid #d8d8d8;
+}
+.comments-container .item .age {
+  margin-bottom: 0px;
+}
+.comments-container .item .time {
+  margin-bottom: 10px;
+}
+.comments-container .shopanswer {
+  background: #f8f8f8;
+  padding: 30px 25px;
+}
+.comments-container .shopanswer .user-info, .comments-container .shopanswer .text {
+  width: auto;
+}
+.comments-container .shopanswer .user-info {
+  float: left;
+}
+.comments-container .shopanswer .username {
+  color: #946363;
+  border-bottom: 0;
+  text-decoration: none;
+}
+.comments-container .shopanswer .text {
+  color: #af7676;
+  font-family: "ProximaNovaLight", Arial, sans-serif;
+}
+.comments-container .level-1 {
+  padding-left: 30px;
+}
+.comments-container .level-2 {
+  padding-left: 60px;
+}
+.comments-container .level-3 {
+  padding-left: 90px;
+}
+.comments-container .level-4 {
+  padding-left: 120px;
+}
+.comments-container .level-5 {
+  padding-left: 150px;
+}
+.comments-container .level-6 {
+  padding-left: 180px;
+}
+.comments-container .level-7 {
+  padding-left: 210px;
+}
+.comments-container .level-8 {
+  padding-left: 240px;
+}
+.comments-container .level-9 {
+  padding-left: 270px;
+}
+.comments-container .comments {
+  vertical-align: top;
+}
+
+#comments-body .dnone {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  #comments-body .level-1 {
+    padding-left: 10px;
+  }
+  #comments-body .level-2 {
+    padding-left: 20px;
+  }
+  #comments-body .level-3 {
+    padding-left: 30px;
+  }
+  #comments-body .level-4 {
+    padding-left: 40px;
+  }
+  #comments-body .level-5 {
+    padding-left: 45px;
+  }
+  #comments-body .level-6 {
+    padding-left: 50px;
+  }
+  #comments-body .level-7 {
+    padding-left: 50px;
+  }
+  #comments-body .level-8 {
+    padding-left: 50px;
+  }
+  #comments-body .level-9 {
+    padding-left: 50px;
+  }
+}

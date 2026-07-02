@@ -1,0 +1,101 @@
+/* ___________ social_block __________________ */
+
+.social_block__wrapper {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+.social_block__img_link {
+  display: block;
+  padding-bottom: 1.3rem; }
+  .social_block__img_link img {
+    width: 100%; }
+
+.social_block__content_link {
+  display: block;
+  min-height: 2rem;
+  padding-left: 2rem; }
+
+.social_block__content_date {
+  color: #949393;
+  padding-bottom: 0;
+  /* ___________ variant 2 news social_block __________________ */ }
+
+.social_block__others_title {
+  font-size: 1.33rem;
+  font-weight: 700; }
+
+.social_block__others__content_comment {
+  padding-bottom: 0.8rem; }
+
+.social_block__others__content {
+  padding-left: 1.3rem;
+  border-left: 1px solid #eee;
+  position: relative;
+  margin-bottom: 0.5rem; }
+  .social_block__others__content .fa-clock_icon {
+    position: absolute;
+    left: -7px;
+    top: 2px;
+    fill: #807f7f;
+    width: 13px;
+    height: 20px;
+    background-color: #fff;
+    padding-bottom: 6px; }
+
+.social_block__others__content .fa-clock {
+  position: absolute;
+  top: 0;
+  left: -0.43rem;
+  color: #807f7f;
+  font-size: 0.87rem;
+  background: #fff;
+  padding: 0.2rem 0 0.5rem 0; }
+
+.social_block__others {
+  padding-left: 4rem;
+  /* ___________ variant 3 news social_block __________________ */ }
+
+.social_block_news__img {
+  width: 100%; }
+
+.social_block_news__item {
+  position: relative;
+  display: block; }
+
+.social_block_news__content {
+  position: absolute;
+  color: #fff !important;
+  bottom: 0;
+  padding: 0 2.67rem 2.67rem 2.67rem; }
+
+.social_block_news__img_link {
+  display: block;
+  overflow: hidden; }
+  .social_block_news__img_link:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(229, 229, 229, 0) 63%, rgba(0, 0, 0, 0.97) 99%, #000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00e5e5e5', endColorstr='#000000', GradientType=0); }
+  .social_block_news__img_link img {
+    box-sizing: border-box; }
+
+.social_block_news__content_comment {
+  line-height: 1.7rem;
+  margin-bottom: 1rem; }
+
+.social_block_news__content {
+  width: 80%; }
+
+.social_block__youTube-wrapper {
+  margin-bottom: 46px;
+  padding-left: 15px;
+  padding-right: 15px; }
+
+.social_block__img iframe {
+  width: 100% !important;
+  min-height: 180px !important;
+  border: none; }
