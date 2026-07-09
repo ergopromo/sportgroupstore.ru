@@ -1,0 +1,13 @@
+---
+description: Строгий запрет Co-authored-by в git-коммитах
+alwaysApply: true
+---
+
+# Git-коммиты: без Co-authored-by
+
+**СТРОГОЕ ПРАВИЛО** — см. также глобальное правило `git-commits-no-coauthor`.
+
+- **ЗАПРЕЩЕНО** `Co-authored-by` в коммитах (включая `Co-authored-by: Cursor <cursoragent@cursor.com>`).
+- Автор — только **Сергей Остапенко** или **Сергей Манушин**.
+- Коммиты от агента: `git -c core.hooksPath=nul commit --author="Имя <email>" -m "..."`
+- Если trailer попал в коммит — `git -c core.hooksPath=nul commit --amend` без Co-authored-by до push.
