@@ -41,13 +41,18 @@ jobs:
           username: novik5ga_github
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/n/novik5ga/dev.sportgroupstore.ru/public_html
-            git config core.sshCommand "ssh -i /home/n/novik5ga/stage.sportgroupstore.ru/public_html/.ssh/id_rsa_project -F /dev/null -o UserKnownHostsFile=/home/n/novik5ga/stage.sportgroupstore.ru/public_html/.ssh/known_hosts -o StrictHostKeyChecking=yes"
-            git config safe.directory /home/n/novik5ga/dev.sportgroupstore.ru/public_html
+            set -e
+            DEPLOY_DIR=/home/n/novik5ga/dev.sportgroupstore.ru/public_html
+            SSH_KEY=/home/n/novik5ga/stage.sportgroupstore.ru/public_html/.ssh/id_rsa_project
+            KNOWN_HOSTS=/home/n/novik5ga/stage.sportgroupstore.ru/public_html/.ssh/known_hosts
+            mkdir -p "$DEPLOY_DIR"
+            cd "$DEPLOY_DIR"
+            git config --global safe.directory "$DEPLOY_DIR"
             if [ ! -d .git ]; then
               git init
               git remote add origin git@github.com:ergopromo/sportgroupstore.ru.git
             fi
+            git config core.sshCommand "ssh -i $SSH_KEY -F /dev/null -o UserKnownHostsFile=$KNOWN_HOSTS -o StrictHostKeyChecking=yes"
             git fetch origin test
             git checkout -B test origin/test
             git reset --hard origin/test
