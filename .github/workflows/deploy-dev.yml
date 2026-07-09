@@ -37,5 +37,4 @@ jobs:
             fi
             git config core.sshCommand "ssh -i $SSH_KEY -F /dev/null -o UserKnownHostsFile=$KNOWN_HOSTS -o StrictHostKeyChecking=yes"
             git fetch origin test
-            git checkout -B test origin/test
-            git reset --hard origin/test
+            git checkout -f -B test origin/test
