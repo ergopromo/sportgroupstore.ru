@@ -1,0 +1,29 @@
+name: Deploy Production
+
+on:
+  push:
+    branches:
+      - master
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to stage via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: turbot.beget.ru
+          username: novik5ga_github
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          command_timeout: 5m
+          script: |
+            set -e
+            cd /home/n/novik5ga/stage.sportgroupstore.ru/public_html
+            git config core.sshCommand "ssh -i /home/n/novik5ga/stage.sportgroupstore.ru/public_html/.ssh/id_rsa_project -F /dev/null -o UserKnownHostsFile=/home/n/novik5ga/stage.sportgroupstore.ru/public_html/.ssh/known_hosts -o StrictHostKeyChecking=yes"
+            git config safe.directory /home/n/novik5ga/stage.sportgroupstore.ru/public_html
+            git fetch origin master
+            git reset --hard origin/master
