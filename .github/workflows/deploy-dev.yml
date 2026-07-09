@@ -1,0 +1,41 @@
+name: Deploy Dev
+
+on:
+  push:
+    branches:
+      - test
+
+concurrency:
+  group: deploy-dev
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to dev via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: novik5ga.beget.tech
+          username: novik5ga_prog
+          key: ${{ secrets.SSH_PRIVATE_KEY_DEV }}
+          command_timeout: 5m
+          script: |
+            set -e
+            DEPLOY_DIR=/home/n/novik5ga/dev.sportgroupstore.ru/public_html
+            SSH_KEY="$DEPLOY_DIR/.ssh/id_rsa_project"
+            KNOWN_HOSTS="$DEPLOY_DIR/.ssh/known_hosts"
+            cd "$DEPLOY_DIR"
+            git config --global --add safe.directory "$DEPLOY_DIR"
+            if [ ! -f "$SSH_KEY" ]; then
+              echo "ERROR: нет $SSH_KEY"
+              exit 1
+            fi
+            if [ ! -d .git ]; then
+              git init
+              git remote add origin git@github.com:ergopromo/sportgroupstore.ru.git
+            fi
+            git config core.sshCommand "ssh -i $SSH_KEY -F /dev/null -o UserKnownHostsFile=$KNOWN_HOSTS -o StrictHostKeyChecking=yes"
+            git fetch origin test
+            git checkout -B test origin/test
+            git reset --hard origin/test
