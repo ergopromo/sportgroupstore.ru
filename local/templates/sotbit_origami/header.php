@@ -116,6 +116,9 @@ $theme = new \Sotbit\Origami\Front\Theme();
     <?
     //$Files->showMetrics();
     $APPLICATION->ShowPanel();
+    ?>
+    <div style="background:#e53935;color:#fff;text-align:center;padding:8px 16px;font-weight:700;">тест</div>
+    <?php
 
     if(Config::get('FRONT_CHANGE') == 'Y') {
         $APPLICATION->IncludeComponent('sotbit:origami.theme','',[]);

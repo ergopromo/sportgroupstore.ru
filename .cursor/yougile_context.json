@@ -1,10 +1,15 @@
 {
-  "active_chat_id": "8b4fa18f-6e29-4654-b9a7-b073599d1ae0",
+  "active_chat_id": "937825ab-3da1-42e7-b9b9-6c91370f09eb",
   "instructions": {
     "8b4fa18f-6e29-4654-b9a7-b073599d1ae0": {
       "task": "SUP-245",
       "author": "Сергей Манушин",
       "updated_at": "2026-07-02 12:31:31"
+    },
+    "937825ab-3da1-42e7-b9b9-6c91370f09eb": {
+      "task": "DEV-51",
+      "author": "Сергей Остапенко",
+      "updated_at": "2026-07-09 15:37:00"
     }
   },
   "chats": {
@@ -12,6 +17,11 @@
       "task": "SUP-245",
       "author": "Сергей Манушин",
       "updated_at": "2026-07-02 12:31:31"
+    },
+    "937825ab-3da1-42e7-b9b9-6c91370f09eb": {
+      "task": "DEV-51",
+      "author": "Сергей Остапенко",
+      "updated_at": "2026-07-09 15:37:00"
     }
   }
 }

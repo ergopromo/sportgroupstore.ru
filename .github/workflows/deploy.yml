@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      - dev
+      - test
 
 jobs:
   deploy-production:
@@ -28,7 +28,7 @@ jobs:
             git reset --hard origin/master
 
   deploy-test:
-    if: github.ref == 'refs/heads/dev'
+    if: github.ref == 'refs/heads/test'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
@@ -48,6 +48,6 @@ jobs:
               git init
               git remote add origin git@github.com:ergopromo/sportgroupstore.ru.git
             fi
-            git fetch origin dev
-            git checkout -B dev origin/dev
-            git reset --hard origin/dev
+            git fetch origin test
+            git checkout -B test origin/test
+            git reset --hard origin/test
