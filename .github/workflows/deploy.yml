@@ -37,17 +37,24 @@ jobs:
       - name: Deploy to test via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: turbot.beget.ru
-          username: novik5ga_github
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: novik5ga.beget.tech
+          username: novik5ga_prog
+          key: ${{ secrets.SSH_PRIVATE_KEY_DEV }}
           script: |
             set -e
             DEPLOY_DIR=/home/n/novik5ga/dev.sportgroupstore.ru/public_html
-            SSH_KEY=/home/n/novik5ga/stage.sportgroupstore.ru/public_html/.ssh/id_rsa_project
-            KNOWN_HOSTS=/home/n/novik5ga/stage.sportgroupstore.ru/public_html/.ssh/known_hosts
-            mkdir -p "$DEPLOY_DIR"
+            SSH_KEY="$DEPLOY_DIR/.ssh/id_rsa_project"
+            KNOWN_HOSTS="$DEPLOY_DIR/.ssh/known_hosts"
             cd "$DEPLOY_DIR"
             git config --global safe.directory "$DEPLOY_DIR"
+            if [ ! -d .ssh ]; then
+              echo "ERROR: нет $DEPLOY_DIR/.ssh — создайте deploy-ключ для dev на Beget"
+              exit 1
+            fi
+            if [ ! -f "$SSH_KEY" ]; then
+              echo "ERROR: нет $SSH_KEY — положите deploy-ключ GitHub в .ssh dev-сайта"
+              exit 1
+            fi
             if [ ! -d .git ]; then
               git init
               git remote add origin git@github.com:ergopromo/sportgroupstore.ru.git
