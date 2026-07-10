@@ -75,13 +75,13 @@ $arComponentParameters = [
             'PARENT' => 'BASE',
             'NAME' => 'Ширина превью',
             'TYPE' => 'STRING',
-            'DEFAULT' => '400',
+            'DEFAULT' => '826',
         ],
         'PICTURE_HEIGHT' => [
             'PARENT' => 'BASE',
             'NAME' => 'Высота превью',
             'TYPE' => 'STRING',
-            'DEFAULT' => '400',
+            'DEFAULT' => '560',
         ],
         'CACHE_TIME' => [
             'DEFAULT' => 36000000,

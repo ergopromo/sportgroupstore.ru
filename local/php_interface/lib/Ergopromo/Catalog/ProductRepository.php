@@ -64,7 +64,10 @@ class ProductRepository
             'DETAIL_PAGE_URL',
             'PREVIEW_PICTURE',
             'DETAIL_PICTURE',
+            'PREVIEW_TEXT',
+            'IBLOCK_SECTION_ID',
             'PROPERTY_' . $labelCode,
+            'PROPERTY_CML2_MANUFACTURER',
         ];
 
         $items = [];
@@ -105,10 +108,23 @@ class ProductRepository
         $priceData = $this->resolvePrice($productId);
         $labels = $this->resolveLabels($element, $labelCode);
 
+        if ($priceData['DISCOUNT_PERCENT'] > 0) {
+            $labels[] = [
+                'CODE' => 'DISCOUNT',
+                'NAME' => '−' . $priceData['DISCOUNT_PERCENT'] . '%',
+                'TYPE' => 'discount',
+            ];
+        }
+
+        $previewText = trim(strip_tags((string)($element['PREVIEW_TEXT'] ?? '')));
+
         return [
             'ID' => $productId,
             'NAME' => (string)$element['NAME'],
             'URL' => (string)$element['DETAIL_PAGE_URL'],
+            'BRAND' => trim((string)($element['PROPERTY_CML2_MANUFACTURER_VALUE'] ?? '')),
+            'CATEGORY' => $this->resolveSectionName((int)($element['IBLOCK_SECTION_ID'] ?? 0)),
+            'META' => $previewText,
             'PICTURE' => $picture,
             'PRICE' => $priceData,
             'LABELS' => $labels,
@@ -307,7 +323,7 @@ class ProductRepository
 
     /**
      * @param array<string, mixed> $element
-     * @return array<int, array{CODE: string, NAME: string, COLOR: string}>
+     * @return array<int, array{CODE: string, NAME: string, TYPE: string}>
      */
     private function resolveLabels(array $element, string $labelCode): array
     {
@@ -326,12 +342,32 @@ class ProductRepository
             $name = $labelCode === 'KHIT' ? 'Хит' : $labelCode;
         }
 
-        $hint = (string)($element['PROPERTY_' . $labelCode . '_HINT'] ?? '');
+        if ($labelCode === 'KHIT') {
+            $name = 'Хит продаж';
+        }
 
         return [[
             'CODE' => $labelCode,
             'NAME' => $name,
-            'COLOR' => $hint !== '' ? $hint : '#00b02a',
+            'TYPE' => 'hit',
         ]];
+    }
+
+    private function resolveSectionName(int $sectionId): string
+    {
+        if ($sectionId <= 0) {
+            return '';
+        }
+
+        static $cache = [];
+
+        if (array_key_exists($sectionId, $cache)) {
+            return $cache[$sectionId];
+        }
+
+        $section = \CIBlockSection::GetByID($sectionId)->Fetch();
+        $cache[$sectionId] = $section ? (string)$section['NAME'] : '';
+
+        return $cache[$sectionId];
     }
 }

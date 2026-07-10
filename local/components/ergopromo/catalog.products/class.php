@@ -22,8 +22,8 @@ class CatalogProductsComponent extends CBitrixComponent
         $arParams['CATALOG_LINK_TEXT'] = trim((string)($arParams['CATALOG_LINK_TEXT'] ?? 'Перейти в каталог'));
         $arParams['CACHE_TIME'] = (int)($arParams['CACHE_TIME'] ?? 36000000);
         $arParams['CACHE_TYPE'] = (string)($arParams['CACHE_TYPE'] ?? 'A');
-        $arParams['PICTURE_WIDTH'] = max(120, (int)($arParams['PICTURE_WIDTH'] ?? 400));
-        $arParams['PICTURE_HEIGHT'] = max(120, (int)($arParams['PICTURE_HEIGHT'] ?? 400));
+        $arParams['PICTURE_WIDTH'] = max(120, (int)($arParams['PICTURE_WIDTH'] ?? 826));
+        $arParams['PICTURE_HEIGHT'] = max(120, (int)($arParams['PICTURE_HEIGHT'] ?? 560));
 
         return $arParams;
     }

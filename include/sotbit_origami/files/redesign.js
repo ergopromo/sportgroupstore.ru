@@ -36,6 +36,43 @@
                 }
             });
         }
+
+        initSgProductCards();
+    }
+
+    function initSgProductCards() {
+        var cards = document.querySelectorAll('.sg-product-mini');
+        if (!cards.length || !('IntersectionObserver' in window)) {
+            return;
+        }
+
+        var desktopQuery = window.matchMedia('(min-width: 992px)');
+
+        if (desktopQuery.matches) {
+            return;
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                var card = entry.target;
+                if (card.dataset.sgFadeScheduled) {
+                    return;
+                }
+
+                card.dataset.sgFadeScheduled = '1';
+                window.setTimeout(function () {
+                    card.classList.add('sg-product-mini--muted');
+                }, 3000);
+            });
+        }, { threshold: 0.3 });
+
+        cards.forEach(function (card) {
+            observer.observe(card);
+        });
     }
 
     if (document.readyState === 'loading') {
