@@ -18,7 +18,8 @@ $meta = trim((string)($item['META'] ?? ''));
 
 $cartLabel = $hasOffers ? $arParams['BUTTON_TEXT_OFFERS'] : $arParams['BUTTON_TEXT'];
 $productId = (int)($price['PRODUCT_ID'] ?? $item['ID']);
-$cartAjaxUrl = SITE_DIR . 'include/ajax/buy.php';
+$cartAjaxUrl = SITE_DIR . 'include/sotbit_origami/ajax/product_cart.php';
+$iconSprite = SITE_DIR . 'include/sotbit_origami/redesign/icons.svg';
 ?>
 <article class="sg-product-mini">
     <a class="sg-product-mini__media" href="<?= htmlspecialcharsbx($item['URL']) ?>">
@@ -96,22 +97,42 @@ $cartAjaxUrl = SITE_DIR . 'include/ajax/buy.php';
                         aria-label="<?= htmlspecialcharsbx($cartLabel) ?>"
                     >
                         <svg width="20" height="20" aria-hidden="true">
-                            <use xlink:href="/local/templates/sotbit_origami/assets/img/sprite.svg#icon_cart_small"></use>
+                            <use xlink:href="<?= htmlspecialcharsbx($iconSprite) ?>#icon-sg-bag"></use>
                         </svg>
                     </a>
                 <?php else: ?>
-                    <button
-                        type="button"
-                        class="sg-product-mini__cart-btn"
-                        data-sg-add-to-cart
+                    <div
+                        class="sg-product-mini__cart-control"
+                        data-sg-cart-control
                         data-product-id="<?= $productId ?>"
                         data-cart-url="<?= htmlspecialcharsbx($cartAjaxUrl) ?>"
-                        aria-label="<?= htmlspecialcharsbx($cartLabel) ?>"
                     >
-                        <svg width="20" height="20" aria-hidden="true">
-                            <use xlink:href="/local/templates/sotbit_origami/assets/img/sprite.svg#icon_cart_small"></use>
-                        </svg>
-                    </button>
+                        <button
+                            type="button"
+                            class="sg-product-mini__cart-btn"
+                            data-sg-cart-add
+                            aria-label="<?= htmlspecialcharsbx($cartLabel) ?>"
+                        >
+                            <svg width="20" height="20" aria-hidden="true">
+                                <use xlink:href="<?= htmlspecialcharsbx($iconSprite) ?>#icon-sg-bag"></use>
+                            </svg>
+                        </button>
+                        <div class="sg-product-mini__qty" data-sg-cart-qty-panel hidden>
+                            <button
+                                type="button"
+                                class="sg-product-mini__qty-btn"
+                                data-sg-cart-minus
+                                aria-label="Уменьшить количество"
+                            >&minus;</button>
+                            <span class="sg-product-mini__qty-value" data-sg-cart-qty>1</span>
+                            <button
+                                type="button"
+                                class="sg-product-mini__qty-btn"
+                                data-sg-cart-plus
+                                aria-label="Увеличить количество"
+                            >+</button>
+                        </div>
+                    </div>
                 <?php endif; ?>
             </div>
         <?php endif; ?>

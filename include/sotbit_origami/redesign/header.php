@@ -12,6 +12,7 @@ global $APPLICATION, $USER;
 $isHome = in_array($APPLICATION->GetCurPage(false), [SITE_DIR, '/'], true);
 $personalPage = Config::get('PERSONAL_PAGE') ?: SITE_DIR . 'personal/';
 $basketPage = Config::get('BASKET_PAGE') ?: SITE_DIR . 'personal/cart/';
+$iconSprite = SITE_DIR . 'include/sotbit_origami/redesign/icons.svg';
 
 $navItems = [
     ['label' => 'Каталог', 'href' => SITE_DIR . 'catalog/'],
@@ -49,18 +50,10 @@ $navItems = [
 
         <div class="sg-header__actions">
             <button class="sg-header__icon-btn" type="button" aria-label="Поиск" data-sg-search-toggle>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                    <circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M14 14L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="<?= htmlspecialcharsbx($iconSprite) ?>#icon-sg-search"></use>
                 </svg>
             </button>
-
-            <a class="sg-header__icon-btn" href="<?= $personalPage ?>" aria-label="Личный кабинет">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                    <circle cx="10" cy="7" r="3.5" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M4.5 17.5C5.4 14.2 7.5 12.5 10 12.5C12.5 12.5 14.6 14.2 15.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-            </a>
 
             <div class="sg-header__basket">
                 <?php
@@ -77,7 +70,7 @@ $navItems = [
                     [
                         'PATH_TO_BASKET' => $basketPage,
                         'PATH_TO_PERSONAL' => $personalPage,
-                        'SHOW_PERSONAL_LINK' => 'N',
+                        'SHOW_PERSONAL_LINK' => 'Y',
                         'SHOW_NUM_PRODUCTS' => 'Y',
                         'SHOW_TOTAL_PRICE' => 'N',
                         'SHOW_PRODUCTS' => 'Y',
