@@ -389,12 +389,12 @@
     }
 
     function initSgProductCards() {
-        var cards = document.querySelectorAll('.sg-product-mini');
+        var cards = document.querySelectorAll('.sg-popular-products .sg-product-mini');
         if (!cards.length || !('IntersectionObserver' in window)) {
             return;
         }
 
-        var desktopQuery = window.matchMedia('(min-width: 992px)');
+        var desktopQuery = window.matchMedia('(min-width: 1200px)');
 
         if (desktopQuery.matches) {
             return;
@@ -420,6 +420,23 @@
 
         cards.forEach(function (card) {
             observer.observe(card);
+        });
+
+        desktopQuery.addEventListener('change', function (event) {
+            if (event.matches) {
+                observer.disconnect();
+                cards.forEach(function (card) {
+                    card.classList.remove('sg-product-mini--muted');
+                    delete card.dataset.sgFadeScheduled;
+                });
+                return;
+            }
+
+            cards.forEach(function (card) {
+                card.classList.remove('sg-product-mini--muted');
+                delete card.dataset.sgFadeScheduled;
+                observer.observe(card);
+            });
         });
     }
 

@@ -28,7 +28,6 @@ $iconSprite = SITE_DIR . 'include/sotbit_origami/redesign/icons.svg';
             src="<?= htmlspecialcharsbx($picture['SRC'] ?? '') ?>"
             alt="<?= htmlspecialcharsbx($picture['ALT'] ?? $item['NAME']) ?>"
             loading="lazy"
-            width="413"
             height="280"
         >
 

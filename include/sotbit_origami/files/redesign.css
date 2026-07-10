@@ -775,12 +775,54 @@ body.sg-redesign .footer-block {
     border: 1px solid var(--sg-border);
     border-radius: 12px;
     overflow: hidden;
-    transition: background 0.3s ease-out, border-color 0.3s ease-out;
 }
 
-.sg-product-mini:hover {
-    background: #060606;
-    border-color: rgba(255, 255, 255, 0.2);
+@media (min-width: 1200px) {
+    .sg-product-mini {
+        transition: background 0.3s ease-out, border-color 0.3s ease-out, border-width 0.3s ease-out;
+    }
+
+    .sg-product-mini:hover {
+        background: #060606;
+        border-color: var(--sg-border-hover);
+        border-width: 2px;
+    }
+
+    .sg-product-mini__image {
+        filter: grayscale(1);
+        transition: filter 0.3s ease-out;
+    }
+
+    .sg-product-mini:hover .sg-product-mini__image {
+        filter: none;
+    }
+
+    .sg-product-mini__actions {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease-out;
+    }
+
+    .sg-product-mini:hover .sg-product-mini__actions {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+@media (max-width: 1199px) {
+    .sg-product-mini__image {
+        filter: none;
+        transition: filter 0.6s ease-in-out;
+    }
+
+    .sg-product-mini--muted .sg-product-mini__image {
+        filter: grayscale(1);
+    }
+
+    .sg-product-mini__actions {
+        opacity: 1;
+        pointer-events: auto;
+    }
 }
 
 .sg-product-mini__media {
@@ -831,12 +873,6 @@ body.sg-redesign .footer-block {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    opacity: 0;
-    transition: opacity 0.3s ease-out;
-}
-
-.sg-product-mini:hover .sg-product-mini__actions {
-    opacity: 1;
 }
 
 .sg-product-mini__action-btn {
@@ -859,12 +895,6 @@ body.sg-redesign .footer-block {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: grayscale(1);
-    transition: filter 0.3s ease-out;
-}
-
-.sg-product-mini:hover .sg-product-mini__image {
-    filter: none;
 }
 
 .sg-product-mini__body {
@@ -1097,19 +1127,6 @@ body.sg-redesign .footer-block {
 
     .sg-popular-products .sg-section-head__link {
         font-size: 16px;
-    }
-
-    .sg-product-mini__image {
-        filter: none;
-        transition: filter 0.6s ease-in-out;
-    }
-
-    .sg-product-mini--muted .sg-product-mini__image {
-        filter: grayscale(1);
-    }
-
-    .sg-product-mini__actions {
-        opacity: 1;
     }
 
     .sg-product-mini__body {
