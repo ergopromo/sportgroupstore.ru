@@ -4,6 +4,8 @@
  * @global string $templateName
  * @var CBitrixComponentTemplate $this
  */
+$this->addExternalCss($this->GetFolder() . '/style.css');
+
 $cartStyle = 'bx-basket';
 $cartId = "bx_basket".$this->randString();
 $arParams['cartId'] = $cartId;

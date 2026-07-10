@@ -16,7 +16,6 @@ if ($arResult['DISABLE_USE_BASKET']) {
     return;
 }
 
-$iconSprite = SITE_DIR . 'include/sotbit_origami/redesign/icons.svg';
 $compositeStub = !empty($arResult['COMPOSITE_STUB']) && $arResult['COMPOSITE_STUB'] === 'Y';
 ?>
 <?php if ($arResult['SHOW_COMPARE']): ?>
@@ -26,7 +25,7 @@ $compositeStub = !empty($arResult['COMPOSITE_STUB']) && $arResult['COMPOSITE_STU
         aria-label="Сравнение"
     >
         <svg width="20" height="20" aria-hidden="true">
-            <use xlink:href="<?= htmlspecialcharsbx($iconSprite) ?>#icon-sg-compare"></use>
+            <use xlink:href="#icon-sg-compare"></use>
         </svg>
         <span class="sg-header__badge basket-item-count" id="compare-count"><?= (int)$arResult['NUM_PRODUCTS_COMPARE'] ?></span>
     </a>
@@ -40,7 +39,7 @@ $compositeStub = !empty($arResult['COMPOSITE_STUB']) && $arResult['COMPOSITE_STU
         <?php if ($arResult['NUM_PRODUCTS_DELAY'] > 0): ?>onmouseenter="<?= $cartId ?>.toggleOpenCloseCart('open', 'favorites')"<?php endif; ?>
     >
         <svg width="20" height="20" aria-hidden="true">
-            <use xlink:href="<?= htmlspecialcharsbx($iconSprite) ?>#icon-sg-heart"></use>
+            <use xlink:href="#icon-sg-heart"></use>
         </svg>
         <span class="sg-header__badge basket-item-count" id="favorites-count"><?= (int)$arResult['NUM_PRODUCTS_DELAY'] ?></span>
     </a>
@@ -53,7 +52,7 @@ $compositeStub = !empty($arResult['COMPOSITE_STUB']) && $arResult['COMPOSITE_STU
         aria-label="Личный кабинет"
     >
         <svg width="20" height="20" aria-hidden="true">
-            <use xlink:href="<?= htmlspecialcharsbx($iconSprite) ?>#icon-sg-profile"></use>
+            <use xlink:href="#icon-sg-profile"></use>
         </svg>
     </a>
 <?php endif; ?>
@@ -66,7 +65,7 @@ $compositeStub = !empty($arResult['COMPOSITE_STUB']) && $arResult['COMPOSITE_STU
         <?php if ($arResult['NUM_PRODUCTS'] > 0): ?>onmouseenter="<?= $cartId ?>.toggleOpenCloseCart('open', 'buy')"<?php endif; ?>
     >
         <svg width="20" height="20" aria-hidden="true">
-            <use xlink:href="<?= htmlspecialcharsbx($iconSprite) ?>#icon-sg-bag"></use>
+            <use xlink:href="#icon-sg-bag"></use>
         </svg>
         <?php if (!$compositeStub && $arParams['SHOW_NUM_PRODUCTS'] === 'Y' && ($arResult['NUM_PRODUCTS'] > 0 || $arParams['SHOW_EMPTY_VALUES'] === 'Y')): ?>
             <span class="sg-header__badge basket-item-count" id="basket-count"><?= (int)$arResult['NUM_PRODUCTS'] ?></span>

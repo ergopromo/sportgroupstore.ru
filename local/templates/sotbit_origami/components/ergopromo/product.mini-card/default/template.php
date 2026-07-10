@@ -19,7 +19,6 @@ $meta = trim((string)($item['META'] ?? ''));
 $cartLabel = $hasOffers ? $arParams['BUTTON_TEXT_OFFERS'] : $arParams['BUTTON_TEXT'];
 $productId = (int)($price['PRODUCT_ID'] ?? $item['ID']);
 $cartAjaxUrl = SITE_DIR . 'include/sotbit_origami/ajax/product_cart.php';
-$iconSprite = SITE_DIR . 'include/sotbit_origami/redesign/icons.svg';
 ?>
 <article class="sg-product-mini">
     <a class="sg-product-mini__media" href="<?= htmlspecialcharsbx($item['URL']) ?>">
@@ -49,17 +48,17 @@ $iconSprite = SITE_DIR . 'include/sotbit_origami/redesign/icons.svg';
             </span>
         <?php endif; ?>
 
-        <span class="sg-product-mini__actions" aria-hidden="true">
-            <span class="sg-product-mini__action-btn">
+        <span class="sg-product-mini__actions">
+            <button type="button" class="sg-product-mini__action-btn" aria-label="В избранное">
                 <svg width="14" height="14" aria-hidden="true">
-                    <use xlink:href="/local/templates/sotbit_origami/assets/img/sprite.svg#icon_favourite"></use>
+                    <use xlink:href="#icon-sg-heart"></use>
                 </svg>
-            </span>
-            <span class="sg-product-mini__action-btn">
+            </button>
+            <button type="button" class="sg-product-mini__action-btn" aria-label="Сравнить">
                 <svg width="14" height="14" aria-hidden="true">
-                    <use xlink:href="/local/templates/sotbit_origami/assets/img/sprite.svg#icon_compare"></use>
+                    <use xlink:href="#icon-sg-compare"></use>
                 </svg>
-            </span>
+            </button>
         </span>
     </a>
 
@@ -96,7 +95,7 @@ $iconSprite = SITE_DIR . 'include/sotbit_origami/redesign/icons.svg';
                         aria-label="<?= htmlspecialcharsbx($cartLabel) ?>"
                     >
                         <svg width="20" height="20" aria-hidden="true">
-                            <use xlink:href="<?= htmlspecialcharsbx($iconSprite) ?>#icon-sg-bag"></use>
+                            <use xlink:href="#icon-sg-bag"></use>
                         </svg>
                     </a>
                 <?php else: ?>
@@ -113,7 +112,7 @@ $iconSprite = SITE_DIR . 'include/sotbit_origami/redesign/icons.svg';
                             aria-label="<?= htmlspecialcharsbx($cartLabel) ?>"
                         >
                             <svg width="20" height="20" aria-hidden="true">
-                                <use xlink:href="<?= htmlspecialcharsbx($iconSprite) ?>#icon-sg-bag"></use>
+                                <use xlink:href="#icon-sg-bag"></use>
                             </svg>
                         </button>
                         <div class="sg-product-mini__qty" data-sg-cart-qty-panel hidden>

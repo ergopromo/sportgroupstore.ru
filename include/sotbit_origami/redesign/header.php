@@ -12,7 +12,6 @@ global $APPLICATION, $USER;
 $isHome = in_array($APPLICATION->GetCurPage(false), [SITE_DIR, '/'], true);
 $personalPage = Config::get('PERSONAL_PAGE') ?: SITE_DIR . 'personal/';
 $basketPage = Config::get('BASKET_PAGE') ?: SITE_DIR . 'personal/cart/';
-$iconSprite = SITE_DIR . 'include/sotbit_origami/redesign/icons.svg';
 
 $navItems = [
     ['label' => 'Каталог', 'href' => SITE_DIR . 'catalog/'],
@@ -23,7 +22,11 @@ $navItems = [
     ['label' => 'Блог', 'href' => SITE_DIR . 'blog/'],
     ['label' => 'Контакты', 'href' => SITE_DIR . 'contacts/'],
 ];
+$spritePath = $_SERVER['DOCUMENT_ROOT'] . SITE_DIR . 'include/sotbit_origami/redesign/icons.svg';
 ?>
+<div class="sg-svg-sprite" aria-hidden="true" hidden>
+    <?php if (is_readable($spritePath)) { readfile($spritePath); } ?>
+</div>
 <header class="sg-header" id="sg-header">
     <div class="sg-header__inner">
         <button class="sg-header__burger" type="button" aria-label="Меню" data-sg-menu-open>
@@ -51,7 +54,7 @@ $navItems = [
         <div class="sg-header__actions">
             <button class="sg-header__icon-btn" type="button" aria-label="Поиск" data-sg-search-toggle>
                 <svg width="20" height="20" aria-hidden="true">
-                    <use xlink:href="<?= htmlspecialcharsbx($iconSprite) ?>#icon-sg-search"></use>
+                    <use xlink:href="#icon-sg-search"></use>
                 </svg>
             </button>
 
