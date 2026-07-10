@@ -17,6 +17,7 @@ if ($arResult['DISABLE_USE_BASKET']) {
 }
 
 $compositeStub = !empty($arResult['COMPOSITE_STUB']) && $arResult['COMPOSITE_STUB'] === 'Y';
+$sgIcons = include $_SERVER['DOCUMENT_ROOT'] . SITE_DIR . 'include/sotbit_origami/redesign/icons_paths.php';
 ?>
 <?php if ($arResult['SHOW_COMPARE']): ?>
     <a
@@ -24,9 +25,14 @@ $compositeStub = !empty($arResult['COMPOSITE_STUB']) && $arResult['COMPOSITE_STU
         <?php if ($arResult['NUM_PRODUCTS_COMPARE'] != 0): ?>href="<?= Config::get('COMPARE_PAGE') ?>"<?php endif; ?>
         aria-label="Сравнение"
     >
-        <svg width="20" height="20" aria-hidden="true">
-            <use xlink:href="#icon-sg-compare"></use>
-        </svg>
+        <img
+            class="sg-icon-img"
+            src="<?= htmlspecialcharsbx($sgIcons['compare_header']) ?>"
+            width="20"
+            height="20"
+            alt=""
+            aria-hidden="true"
+        >
         <span class="sg-header__badge basket-item-count" id="compare-count"><?= (int)$arResult['NUM_PRODUCTS_COMPARE'] ?></span>
     </a>
 <?php endif; ?>
@@ -38,9 +44,14 @@ $compositeStub = !empty($arResult['COMPOSITE_STUB']) && $arResult['COMPOSITE_STU
         aria-label="Избранное"
         <?php if ($arResult['NUM_PRODUCTS_DELAY'] > 0): ?>onmouseenter="<?= $cartId ?>.toggleOpenCloseCart('open', 'favorites')"<?php endif; ?>
     >
-        <svg width="20" height="20" aria-hidden="true">
-            <use xlink:href="#icon-sg-heart"></use>
-        </svg>
+        <img
+            class="sg-icon-img"
+            src="<?= htmlspecialcharsbx($sgIcons['like']) ?>"
+            width="20"
+            height="20"
+            alt=""
+            aria-hidden="true"
+        >
         <span class="sg-header__badge basket-item-count" id="favorites-count"><?= (int)$arResult['NUM_PRODUCTS_DELAY'] ?></span>
     </a>
 <?php endif; ?>
@@ -51,9 +62,14 @@ $compositeStub = !empty($arResult['COMPOSITE_STUB']) && $arResult['COMPOSITE_STU
         href="<?= htmlspecialcharsbx($arParams['PATH_TO_PERSONAL'] ?: SITE_DIR . 'personal/') ?>"
         aria-label="Личный кабинет"
     >
-        <svg width="20" height="20" aria-hidden="true">
-            <use xlink:href="#icon-sg-profile"></use>
-        </svg>
+        <img
+            class="sg-icon-img"
+            src="<?= htmlspecialcharsbx($sgIcons['user']) ?>"
+            width="20"
+            height="20"
+            alt=""
+            aria-hidden="true"
+        >
     </a>
 <?php endif; ?>
 
@@ -64,9 +80,14 @@ $compositeStub = !empty($arResult['COMPOSITE_STUB']) && $arResult['COMPOSITE_STU
         aria-label="Корзина"
         <?php if ($arResult['NUM_PRODUCTS'] > 0): ?>onmouseenter="<?= $cartId ?>.toggleOpenCloseCart('open', 'buy')"<?php endif; ?>
     >
-        <svg width="20" height="20" aria-hidden="true">
-            <use xlink:href="#icon-sg-bag"></use>
-        </svg>
+        <img
+            class="sg-icon-img"
+            src="<?= htmlspecialcharsbx($sgIcons['cart']) ?>"
+            width="20"
+            height="20"
+            alt=""
+            aria-hidden="true"
+        >
         <?php if (!$compositeStub && $arParams['SHOW_NUM_PRODUCTS'] === 'Y' && ($arResult['NUM_PRODUCTS'] > 0 || $arParams['SHOW_EMPTY_VALUES'] === 'Y')): ?>
             <span class="sg-header__badge basket-item-count" id="basket-count"><?= (int)$arResult['NUM_PRODUCTS'] ?></span>
         <?php endif; ?>

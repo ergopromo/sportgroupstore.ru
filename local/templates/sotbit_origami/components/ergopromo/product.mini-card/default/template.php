@@ -19,6 +19,7 @@ $meta = trim((string)($item['META'] ?? ''));
 $cartLabel = $hasOffers ? $arParams['BUTTON_TEXT_OFFERS'] : $arParams['BUTTON_TEXT'];
 $productId = (int)($price['PRODUCT_ID'] ?? $item['ID']);
 $cartAjaxUrl = SITE_DIR . 'include/sotbit_origami/ajax/product_cart.php';
+$sgIcons = include $_SERVER['DOCUMENT_ROOT'] . SITE_DIR . 'include/sotbit_origami/redesign/icons_paths.php';
 ?>
 <article class="sg-product-mini">
     <a class="sg-product-mini__media" href="<?= htmlspecialcharsbx($item['URL']) ?>">
@@ -50,14 +51,24 @@ $cartAjaxUrl = SITE_DIR . 'include/sotbit_origami/ajax/product_cart.php';
 
         <span class="sg-product-mini__actions">
             <button type="button" class="sg-product-mini__action-btn" aria-label="В избранное">
-                <svg width="14" height="14" aria-hidden="true">
-                    <use xlink:href="#icon-sg-heart"></use>
-                </svg>
+                <img
+                    class="sg-icon-img"
+                    src="<?= htmlspecialcharsbx($sgIcons['like']) ?>"
+                    width="14"
+                    height="14"
+                    alt=""
+                    aria-hidden="true"
+                >
             </button>
             <button type="button" class="sg-product-mini__action-btn" aria-label="Сравнить">
-                <svg width="14" height="14" aria-hidden="true">
-                    <use xlink:href="#icon-sg-compare"></use>
-                </svg>
+                <img
+                    class="sg-icon-img"
+                    src="<?= htmlspecialcharsbx($sgIcons['compare_card']) ?>"
+                    width="14"
+                    height="14"
+                    alt=""
+                    aria-hidden="true"
+                >
             </button>
         </span>
     </a>
@@ -94,9 +105,14 @@ $cartAjaxUrl = SITE_DIR . 'include/sotbit_origami/ajax/product_cart.php';
                         href="<?= htmlspecialcharsbx($item['URL']) ?>"
                         aria-label="<?= htmlspecialcharsbx($cartLabel) ?>"
                     >
-                        <svg width="20" height="20" aria-hidden="true">
-                            <use xlink:href="#icon-sg-bag"></use>
-                        </svg>
+                        <img
+                            class="sg-icon-img"
+                            src="<?= htmlspecialcharsbx($sgIcons['cart']) ?>"
+                            width="20"
+                            height="20"
+                            alt=""
+                            aria-hidden="true"
+                        >
                     </a>
                 <?php else: ?>
                     <div
@@ -111,9 +127,14 @@ $cartAjaxUrl = SITE_DIR . 'include/sotbit_origami/ajax/product_cart.php';
                             data-sg-cart-add
                             aria-label="<?= htmlspecialcharsbx($cartLabel) ?>"
                         >
-                            <svg width="20" height="20" aria-hidden="true">
-                                <use xlink:href="#icon-sg-bag"></use>
-                            </svg>
+                            <img
+                                class="sg-icon-img"
+                                src="<?= htmlspecialcharsbx($sgIcons['cart']) ?>"
+                                width="20"
+                                height="20"
+                                alt=""
+                                aria-hidden="true"
+                            >
                         </button>
                         <div class="sg-product-mini__qty" data-sg-cart-qty-panel hidden>
                             <button
