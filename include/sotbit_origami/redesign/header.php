@@ -17,6 +17,8 @@ $navItems = [
     ['label' => 'Каталог', 'href' => SITE_DIR . 'catalog/'],
     ['label' => 'О нас', 'href' => SITE_DIR . 'about/'],
     ['label' => 'Энциклопедия', 'href' => SITE_DIR . 'about/'],
+    ['label' => 'Акции', 'href' => SITE_DIR . 'promotions/'],
+    ['label' => 'Новости', 'href' => SITE_DIR . 'news/'],
     ['label' => 'Блог', 'href' => SITE_DIR . 'blog/'],
     ['label' => 'Контакты', 'href' => SITE_DIR . 'contacts/'],
 ];
