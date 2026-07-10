@@ -670,6 +670,11 @@ body.sg-redesign--home .puzzle_block.main-container {
     overflow-x: clip;
 }
 
+body.sg-redesign--home .puzzle_block.main-container {
+    padding: 0;
+    background: transparent;
+}
+
 body.sg-redesign--home .block_main_left_menu__content {
     padding: 0;
 }
