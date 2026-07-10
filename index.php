@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Интернет-магазин спортивного питания");
-?><div class="mt-4 mb-4 pt-4">
+?><div class="sg-home"><div class="mt-4 mb-4 pt-4">
 <?
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
@@ -890,5 +890,6 @@ $APPLICATION->IncludeComponent(
             myMap.geoObjects.add(myPlacemark);
         });
     </script>
+</div>
 </div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -87,6 +87,8 @@ $theme = new \Sotbit\Origami\Front\Theme();
     Asset::getInstance()->addCss($theme->getTheme() . "/size.css");
     Asset::getInstance()->addCss($theme->getTheme() . "/custom.css");
     Asset::getInstance()->addCss(SITE_DIR . "include/sotbit_origami/files/custom_style.css");
+    Asset::getInstance()->addCss(SITE_DIR . "include/sotbit_origami/files/redesign.css");
+    Asset::getInstance()->addJs(SITE_DIR . "include/sotbit_origami/files/redesign.js");
 
     $Files = new \Sotbit\Origami\Helper\Files();
     $Files->showCustomCss();
@@ -95,7 +97,12 @@ $theme = new \Sotbit\Origami\Front\Theme();
     <title><?$APPLICATION->ShowTitle()?></title>
     <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/custom-contact.css">
 </head>
-<body>
+<?php
+$sgPage = $APPLICATION->GetCurPage(false);
+$sgIsHome = in_array($sgPage, [SITE_DIR, '/'], true);
+$sgBodyClass = 'sg-redesign' . ($sgIsHome ? ' sg-redesign--home' : '');
+?>
+<body class="<?=$sgBodyClass?>">
     <?
 
    if (Config::get('IE_STUB') == "Y") {
@@ -117,22 +124,13 @@ $theme = new \Sotbit\Origami\Front\Theme();
     //$Files->showMetrics();
     $APPLICATION->ShowPanel();
     ?>
-    <div style="background:#e53935;color:#fff;text-align:center;padding:8px 16px;font-weight:700;">тест</div>
     <?php
 
     if(Config::get('FRONT_CHANGE') == 'Y') {
         $APPLICATION->IncludeComponent('sotbit:origami.theme','',[]);
     }
 
-    include $_SERVER['DOCUMENT_ROOT'].\SotbitOrigami::headersDir.'/'.Config::get('HEADER').'/content.php';
-
-    if (file_exists($_SERVER['DOCUMENT_ROOT'].\SotbitOrigami::headersDir.'/'.Config::get('HEADER').'/style.css')) {
-        Asset::getInstance()->addCss(\SotbitOrigami::headersDir.'/'.Config::get('HEADER').'/style.css');
-    }
-
-    if (file_exists($_SERVER['DOCUMENT_ROOT'].\SotbitOrigami::headersDir.'/'.Config::get('HEADER').'/script.js')) {
-        Asset::getInstance()->addJs(\SotbitOrigami::headersDir.'/'.Config::get('HEADER').'/script.js');
-    }
+    include $_SERVER['DOCUMENT_ROOT'] . SITE_DIR . 'include/sotbit_origami/redesign/header.php';
 
     $page = \SotbitOrigami::getCurrentPage();
 

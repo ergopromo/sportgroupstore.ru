@@ -29,15 +29,7 @@ if(!\SotbitOrigami::needShowFullWidth($page)) {
 
 <!-- footer -->
 <?
-include $_SERVER['DOCUMENT_ROOT'].'/'.\SotbitOrigami::footersDir.'/'.Config::get('FOOTER').'/content.php';
-if (!\Sotbit\Origami\PageSpeed\Robots::isPageSpeedTest()) {
-    if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . \SotbitOrigami::footersDir . '/'
-        . Config::get('FOOTER') . '/style.css')
-    ) {
-        Asset::getInstance()->addCss(\SotbitOrigami::footersDir . '/'
-            . Config::get('FOOTER') . '/style.css');
-    }
-}
+include $_SERVER['DOCUMENT_ROOT'] . SITE_DIR . 'include/sotbit_origami/redesign/footer.php';
 ?>
 
 <?
