@@ -38,6 +38,54 @@
         }
 
         initSgProductCards();
+        initSgAddToCart();
+    }
+
+    function initSgAddToCart() {
+        document.addEventListener('click', function (event) {
+            var btn = event.target.closest('[data-sg-add-to-cart]');
+            if (!btn || btn.disabled) {
+                return;
+            }
+
+            event.preventDefault();
+
+            var productId = btn.getAttribute('data-product-id');
+            var cartUrl = btn.getAttribute('data-cart-url') || '/include/ajax/buy.php';
+
+            if (!productId) {
+                return;
+            }
+
+            btn.disabled = true;
+
+            var payload = {
+                id: productId,
+                qnt: 1,
+                action: 'add',
+                props: null
+            };
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', cartUrl);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+            xhr.onload = function () {
+                btn.disabled = false;
+
+                try {
+                    var result = JSON.parse(xhr.responseText);
+                    if (result.STATUS === 'OK' && window.BX && typeof BX.onCustomEvent === 'function') {
+                        BX.onCustomEvent('OnBasketChange');
+                    }
+                } catch (error) {
+                    // ignore parse errors
+                }
+            };
+            xhr.onerror = function () {
+                btn.disabled = false;
+            };
+            xhr.send('params=' + encodeURIComponent(JSON.stringify(payload)));
+        });
     }
 
     function initSgProductCards() {
