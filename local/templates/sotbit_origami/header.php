@@ -40,6 +40,12 @@ $theme = new \Sotbit\Origami\Front\Theme();
     Asset::getInstance()->addString("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
     Asset::getInstance()->addString("<meta name='author' content='sotbit.ru'>");
 
+    $sgHost = $_SERVER['HTTP_HOST'] ?? '';
+    if (stripos($sgHost, 'dev.sportgroupstore.ru') !== false) {
+        Asset::getInstance()->addString("<meta name='robots' content='noindex, nofollow'>");
+        Asset::getInstance()->addString("<meta name='googlebot' content='noindex, nofollow'>");
+    }
+
 	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/vendor/jquery.min.js");
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/script.js");
 	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/vendor/jquery-ui.min.js");

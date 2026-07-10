@@ -36,3 +36,9 @@ if (class_exists('\Bitrix\Main\Security\Csrf\Configuration')) {
 
 // Регистрируем все модификации
 MutatorsManager::register();
+
+// Закрываем тестовый стенд от индексации поисковиками
+$sgHost = $_SERVER['HTTP_HOST'] ?? '';
+if (stripos($sgHost, 'dev.sportgroupstore.ru') !== false && !headers_sent()) {
+    header('X-Robots-Tag: noindex, nofollow', true);
+}
