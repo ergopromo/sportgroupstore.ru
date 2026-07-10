@@ -327,21 +327,35 @@ body.sg-redesign .footer-block {
 .sg-footer__socials {
     display: flex;
     align-items: center;
-    gap: 12px;
     min-height: 20px;
 }
 
-.sg-footer__social-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--sg-text);
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
+.sg-footer__socials-wrap {
+    position: relative;
+    width: 105px;
+    height: 20px;
 }
 
-.sg-footer__social-link:hover {
-    opacity: 1;
+.sg-footer__socials-img {
+    display: block;
+    width: 105px;
+    height: 20px;
+}
+
+.sg-footer__social-hit {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.sg-footer__social-hit--tg {
+    left: 0;
+    width: 24px;
+}
+
+.sg-footer__social-hit--vk {
+    left: 38px;
+    width: 33px;
 }
 
 .sg-footer__col {

@@ -45,7 +45,7 @@ $tgLink = Config::get('TELEGA');
                 <a href="<?= $siteDir ?>" class="sg-footer__logo-link" aria-label="СПОРТГРУПП">
                     <img
                         class="sg-footer__logo"
-                        src="<?= $siteDir ?>include/sotbit_origami/images/Logo.svg"
+                        src="<?= $siteDir ?>include/sotbit_origami/redesign/footer-logo.svg"
                         alt="СПОРТГРУПП"
                         width="100"
                         height="95"
@@ -59,32 +59,35 @@ $tgLink = Config::get('TELEGA');
                 </p>
                 <?php if ($vkLink || $tgLink): ?>
                     <div class="sg-footer__socials">
-                        <?php if ($vkLink): ?>
-                            <a
-                                class="sg-footer__social-link"
-                                href="<?= htmlspecialcharsbx($vkLink) ?>"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="ВКонтакте"
+                        <div class="sg-footer__socials-wrap">
+                            <img
+                                class="sg-footer__socials-img"
+                                src="<?= $siteDir ?>include/sotbit_origami/redesign/footer-socials.svg"
+                                alt=""
+                                width="105"
+                                height="20"
+                                loading="lazy"
+                                aria-hidden="true"
                             >
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path fill="currentColor" d="M10.77 15.5c-5.09 0-7.97-3.5-8.08-9.33h2.56c.08 4.29 1.97 6.11 3.44 6.48V6.17h2.41v3.7c1.47-.16 3.02-1.83 3.54-3.7h2.41c-.39 2.28-2.02 3.95-3.18 4.64 1.16.54 3.02 2.16 3.73 4.29h-2.66c-.56-1.74-2.06-3.08-4.17-3.2v3.2Z"/>
-                                </svg>
-                            </a>
-                        <?php endif; ?>
-                        <?php if ($tgLink): ?>
-                            <a
-                                class="sg-footer__social-link"
-                                href="<?= htmlspecialcharsbx($tgLink) ?>"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Telegram"
-                            >
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path fill="currentColor" d="M16.5 4.2 3.7 9.2c-.95.37-.93 1.67.03 2.01l3.2 1.05 1.23 3.9c.28.88 1.44 1.08 2 .35l1.8-2.2 3.74 2.76c.72.53 1.75.13 1.93-.72L17.6 5.3c.2-.95-.72-1.7-1.6-1.1Z"/>
-                                </svg>
-                            </a>
-                        <?php endif; ?>
+                            <?php if ($tgLink): ?>
+                                <a
+                                    class="sg-footer__social-hit sg-footer__social-hit--tg"
+                                    href="<?= htmlspecialcharsbx($tgLink) ?>"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Telegram"
+                                ></a>
+                            <?php endif; ?>
+                            <?php if ($vkLink): ?>
+                                <a
+                                    class="sg-footer__social-hit sg-footer__social-hit--vk"
+                                    href="<?= htmlspecialcharsbx($vkLink) ?>"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="ВКонтакте"
+                                ></a>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 <?php endif; ?>
             </div>
