@@ -15,6 +15,20 @@ use Bitrix\Main\Page\Asset;
 // Подключение MutatorsManager
 require_once __DIR__ . '/mutators/mutatorsManager.php';
 
+// Автозагрузка классов Ergopromo
+spl_autoload_register(static function (string $class): void {
+    if (strpos($class, 'Ergopromo\\') !== 0) {
+        return;
+    }
+
+    $relativePath = str_replace('\\', '/', substr($class, strlen('Ergopromo\\')));
+    $filePath = $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/lib/Ergopromo/' . $relativePath . '.php';
+
+    if (is_file($filePath)) {
+        require_once $filePath;
+    }
+});
+
 /** 
  * Профилактика CSRF для 1C-обмена (только если поддерживается текущим ядром).
  * Безопасная проверка наличия класса, чтобы исключить фатальные ошибки на старых версиях.

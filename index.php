@@ -9,6 +9,27 @@ $APPLICATION->IncludeFile(
 	['MODE' => 'php', 'SHOW_BORDER' => false]
 );
 ?>
+<?php
+$APPLICATION->IncludeComponent(
+    'ergopromo:catalog.products',
+    'main',
+    [
+        'IBLOCK_TYPE' => 'sotbit_origami_catalog',
+        'IBLOCK_ID' => '36',
+        'LABEL_PROPERTY' => 'KHIT',
+        'ELEMENT_COUNT' => '8',
+        'SORT_FIELD' => 'sort',
+        'SORT_ORDER' => 'ASC',
+        'PRICE_CODE' => 'BASE',
+        'TITLE' => 'Популярные товары',
+        'CATALOG_URL' => '/catalog/',
+        'CATALOG_LINK_TEXT' => 'Перейти в каталог',
+        'CACHE_TYPE' => 'A',
+        'CACHE_TIME' => '36000000',
+    ],
+    false
+);
+?>
 <div class="mt-4 mb-4 pt-4">
     <?
     $APPLICATION->IncludeComponent(
@@ -317,135 +338,6 @@ $APPLICATION->IncludeFile(
 	false
 );
     ?>
-</div>
-<div class="mt-4 mb-4 pt-4">
-<div class="puzzle_block main-container">
-<div class="main-block-title">
-<div class="h2 mb-0"><b>Популярные товары</b></div>
-        <a href="/catalog/" class="main-block-title__link">Перейти в каталог</a>
-    </div>
-    <?
-	$APPLICATION->IncludeComponent(
-	"bitrix:catalog.section", 
-	"origami_default", 
-	array(
-		"IBLOCK_TYPE" => "sotbit_origami_catalog",
-		"IBLOCK_ID" => "36",
-		"SECTION_ID" => "",
-		"SECTION_CODE" => "",
-		"ELEMENT_SORT_FIELD" => "RAND",
-		"ELEMENT_SORT_ORDER" => "asc",
-		"PAGE_ELEMENT_COUNT" => "8",
-		"FILTER_NAME" => "",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "36000000",
-		"PRICE_CODE" => array(
-			0 => "BASE",
-		),
-		"SHOW_ALL_WO_SECTION" => "Y",
-		"TITLE" => "Популярные товары",
-		"ADD_SECTIONS_CHAIN" => "N",
-		"COMPONENT_TEMPLATE" => "origami_default",
-		"SECTION_USER_FIELDS" => array(
-			0 => "UF_SHOW_ON_MAIN_PAGE",
-			1 => "UF_DETAIL_TEMPLATE",
-			2 => "UF_PHOTO_DETAIL",
-			3 => "",
-		),
-		"INCLUDE_SUBSECTIONS" => "Y",
-		"CUSTOM_FILTER" => "{\"CLASS_ID\":\"CondGroup\",\"DATA\":{\"All\":\"AND\",\"True\":\"True\"},\"CHILDREN\":[]}",
-		"HIDE_NOT_AVAILABLE" => "N",
-		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
-		"ELEMENT_SORT_FIELD2" => "id",
-		"ELEMENT_SORT_ORDER2" => "desc",
-		"LINE_ELEMENT_COUNT" => "4",
-		"OFFERS_LIMIT" => "5",
-		"BACKGROUND_IMAGE" => "-",
-		"TEMPLATE_THEME" => "blue",
-		"PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'3','BIG_DATA':false},{'VARIANT':'3','BIG_DATA':false}]",
-		"ENLARGE_PRODUCT" => "STRICT",
-		"PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
-		"SHOW_SLIDER" => "Y",
-		"ADD_PICT_PROP" => "-",
-		"LABEL_PROP" => array(
-			0 => "KHIT",
-		),
-		"PRODUCT_SUBSCRIPTION" => "Y",
-		"SHOW_DISCOUNT_PERCENT" => "N",
-		"SHOW_OLD_PRICE" => "N",
-		"SHOW_MAX_QUANTITY" => "N",
-		"SHOW_CLOSE_POPUP" => "N",
-		"MESS_BTN_BUY" => "Купить",
-		"MESS_BTN_ADD_TO_BASKET" => "В корзину",
-		"MESS_BTN_SUBSCRIBE" => "Подписаться",
-		"MESS_BTN_DETAIL" => "Подробнее",
-		"MESS_NOT_AVAILABLE" => "Нет в наличии",
-		"MOBILE_VIEW_MINIMAL" => "Y",
-		"SECTION_URL" => "",
-		"DETAIL_URL" => "",
-		"SECTION_ID_VARIABLE" => "SECTION_ID",
-		"SEF_MODE" => "N",
-		"AJAX_MODE" => "N",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"CACHE_GROUPS" => "Y",
-		"SET_TITLE" => "Y",
-		"SET_BROWSER_TITLE" => "Y",
-		"BROWSER_TITLE" => "-",
-		"SET_META_KEYWORDS" => "Y",
-		"META_KEYWORDS" => "-",
-		"SET_META_DESCRIPTION" => "Y",
-		"META_DESCRIPTION" => "-",
-		"SET_LAST_MODIFIED" => "N",
-		"USE_MAIN_ELEMENT_SECTION" => "N",
-		"CACHE_FILTER" => "N",
-		"RCM_TYPE" => "personal",
-		"RCM_PROD_ID" => $_REQUEST["PRODUCT_ID"],
-		"SHOW_FROM_SECTION" => "N",
-		"ACTION_VARIABLE" => "action",
-		"PRODUCT_ID_VARIABLE" => "id",
-		"USE_PRICE_COUNT" => "N",
-		"SHOW_PRICE_COUNT" => "1",
-		"PRICE_VAT_INCLUDE" => "Y",
-		"CONVERT_CURRENCY" => "N",
-		"FILL_ITEM_ALL_PRICES" => "N",
-		"BASKET_URL" => "/personal/basket.php",
-		"USE_PRODUCT_QUANTITY" => "N",
-		"PRODUCT_QUANTITY_VARIABLE" => "quantity",
-		"ADD_PROPERTIES_TO_BASKET" => "Y",
-		"PRODUCT_PROPS_VARIABLE" => "prop",
-		"PARTIAL_PRODUCT_PROPERTIES" => "N",
-		"ADD_TO_BASKET_ACTION" => "ADD",
-		"DISPLAY_COMPARE" => "N",
-		"USE_ENHANCED_ECOMMERCE" => "N",
-		"PAGER_TEMPLATE" => ".default",
-		"DISPLAY_TOP_PAGER" => "N",
-		"DISPLAY_BOTTOM_PAGER" => "Y",
-		"PAGER_TITLE" => "Товары",
-		"PAGER_SHOW_ALWAYS" => "N",
-		"PAGER_DESC_NUMBERING" => "N",
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-		"PAGER_SHOW_ALL" => "N",
-		"PAGER_BASE_LINK_ENABLE" => "N",
-		"LAZY_LOAD" => "N",
-		"LOAD_ON_SCROLL" => "N",
-		"SET_STATUS_404" => "N",
-		"SHOW_404" => "N",
-		"MESSAGE_404" => "",
-		"COMPATIBLE_MODE" => "N",
-		"DISABLE_INIT_JS_IN_COMPONENT" => "N",
-		"SLIDER_INTERVAL" => "3000",
-		"SLIDER_PROGRESS" => "N",
-		"LABEL_PROP_MOBILE" => array(
-		),
-		"LABEL_PROP_POSITION" => "top-left"
-	),
-	false
-);	
-	?>
-    </div>
 </div>
 <div class="mt-4 mb-4 pt-4">
     <?
